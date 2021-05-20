@@ -1,0 +1,78 @@
+
+
+.fn-14 {
+	-fx-font-size:14px;
+}
+.fn-16 {
+	-fx-font-size:16px;
+}	
+.fn-18 {
+	-fx-font-size:18px;
+}
+.fn-24 {
+	-fx-font-size:24px;
+}
+.fn-32 {
+	-fx-font-size:32px;
+}
+.fn-48 {
+	-fx-font-size:48px;
+}
+.fn-64 {
+	-fx-font-size:64px;
+}
+
+.txt-center{
+	-fx-text-alignment: center;
+}
+
+.txt-justify{
+	-fx-text-alignment: justify;
+}
+
+.txt-left{
+	-fx-text-alignment: left;
+}
+
+.txt-right{
+	-fx-text-alignment: right;
+}
+
+.back-white{
+	-fx-background-color: #ffffff;
+
+}
+
+.back-transparent{
+	-fx-background-color: transparent;
+}
+
+
+.back-light-gray{
+	-fx-background-color: #ececec;
+}
+
+.hover-hand {
+	-fx-cursor: hand;
+}
+
+.flat{
+	-fx-background-radius: 0px;
+}
+
+.fill-red{
+	-fx-fill: #e86829;
+	-fx-text-fill: #e86829;
+}
+.fill-green{
+	-fx-fill: #8bc34a;
+	-fx-text-fill: #8bc34a;
+}
+.fill-grey{
+	-fx-fill: #6d6d6d;
+	-fx-text-fill: #6d6d6d;
+}
+
+.back-green{
+	-fx-background-color: #8bc34a;
+}

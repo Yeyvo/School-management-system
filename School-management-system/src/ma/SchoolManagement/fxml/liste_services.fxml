@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TreeTableColumn?>
+<?import javafx.scene.control.TreeTableView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+
+<VBox prefHeight="600.0" prefWidth="800.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <BorderPane>
+         <center>
+            <VBox alignment="CENTER" prefHeight="156.0" prefWidth="800.0">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Liste des services sociaux attribuer au Etudiant" textAlignment="CENTER" wrappingWidth="299.1875">
+                     <styleClass>
+                        <String fx:value="fn-24" />
+                        <String fx:value="fill-grey" />
+                        <String fx:value="txt-center" />
+                     </styleClass>
+                  </Text>
+               </children>
+            </VBox>
+         </center>
+         <VBox.margin>
+            <Insets bottom="30.0" />
+         </VBox.margin>
+      </BorderPane>
+      <TreeTableView maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="451.0" prefWidth="800.0">
+        <columns>
+          <TreeTableColumn prefWidth="156.0" text="Etudiant ID" />
+          <TreeTableColumn prefWidth="223.0" text="Etablissement" />
+            <TreeTableColumn prefWidth="102.0" text="Bourse" />
+            <TreeTableColumn prefWidth="152.0" text="Cité Universitaire" />
+            <TreeTableColumn prefWidth="165.0" text="Couverture Medicale" />
+        </columns>
+      </TreeTableView>
+   </children>
+</VBox>
