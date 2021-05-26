@@ -11,7 +11,7 @@ DROP TABLE IF EXISTS Etablissement;
 DROP TABLE IF EXISTS Etudiant;
 
 CREATE TABLE Etudiant(
-	EtudId INT NOT NULL PRIMARY KEY,
+	EtudId INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	EtudCNE varchar(255),
 	EtudNom varchar(255),
 	EtudPrenom varchar(255),
@@ -40,7 +40,7 @@ CREATE TABLE Etudiant(
 
 
 CREATE TABLE Etablissement(
-	CodeEtab INT NOT NULL PRIMARY KEY,
+	CodeEtab INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	DesEtab varchar(255),
 	EtudDPM varchar(255)
 	);
