@@ -12,8 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-
-<VBox prefHeight="605.0" prefWidth="602.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="605.0" prefWidth="602.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="153.0" prefWidth="705.0" styleClass="back-light-gray">
          <children>
