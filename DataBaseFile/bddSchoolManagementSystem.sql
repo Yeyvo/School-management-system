@@ -47,7 +47,7 @@ CREATE TABLE Etablissement(
 
 
 
-CREATE TABLE Filière(
+CREATE TABLE Filiere(
 	CodeEtab INT NOT NULL,
 	CodeFil INT NOT NULL,
 	DesFil varchar(255),
