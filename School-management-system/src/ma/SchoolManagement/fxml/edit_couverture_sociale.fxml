@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="416.0" prefWidth="526.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.ChoixServiceController">
+<VBox prefHeight="416.0" prefWidth="526.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.EditCouvSocialController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="127.0" prefWidth="655.0" styleClass="back-light-gray">
          <children>
