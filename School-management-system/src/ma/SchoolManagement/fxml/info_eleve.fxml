@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="605.0" prefWidth="602.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="605.0" prefWidth="602.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.InfoEleveController">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="153.0" prefWidth="705.0" styleClass="back-light-gray">
          <children>
@@ -42,7 +42,7 @@
                   <Insets bottom="5.0" left="7.0" top="5.0" />
                </padding>
                <children>
-                  <HBox prefHeight="25.0" prefWidth="306.0">
+                  <HBox fx:id="nomEleveText" prefHeight="25.0" prefWidth="306.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Nom" wrappingWidth="115.0">
                            <HBox.margin>
@@ -52,7 +52,7 @@
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
-                  <HBox>
+                  <HBox fx:id="prenomEleveText">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Prenom" wrappingWidth="115.0">
                            <HBox.margin>
@@ -69,7 +69,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="sexeText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="235.0">
@@ -79,7 +79,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                        <Text fx:id="dateNaissanceEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
                            <HBox.margin>
                               <Insets left="7.0" top="7.0" />
                            </HBox.margin>
@@ -93,7 +93,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="adresseEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="85.0">
@@ -103,7 +103,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="villeEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox>
@@ -113,7 +113,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="codePostalEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="370.0">
@@ -123,7 +123,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="nationnaliteEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox>
@@ -133,7 +133,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="telephoneEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox>
@@ -143,7 +143,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="mailEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox>
@@ -153,7 +153,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                        <Text fx:id="situationFamilialeEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
                            <HBox.margin>
                               <Insets left="7.0" top="8.0" />
                            </HBox.margin>
@@ -167,7 +167,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="RIBEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                </children>
@@ -187,7 +187,7 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="CNIPereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox>
@@ -197,7 +197,7 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="nomPereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox>
@@ -207,16 +207,17 @@
                               <Insets top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="prenomPereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
-                  <HBox>
+                  <HBox fx:id="dateDecesPereText">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Date de Naissance du Père" wrappingWidth="115.0">
                            <HBox.margin>
                               <Insets bottom="3.0" />
                            </HBox.margin>
                         </Text>
+                        <Text fx:id="dateNaissancePereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox>
@@ -226,6 +227,7 @@
                               <Insets bottom="3.0" />
                            </HBox.margin>
                         </Text>
+                        <Text fx:id="dateDecesPereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <Text strokeType="OUTSIDE" strokeWidth="0.0" text="---------------------------" />
@@ -236,7 +238,7 @@
                               <Insets bottom="3.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="CNIMereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="58.0">
@@ -246,7 +248,7 @@
                               <Insets bottom="3.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="nomMereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                   <HBox layoutX="10.0" layoutY="83.0">
@@ -256,7 +258,7 @@
                               <Insets bottom="3.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                        <Text fx:id="prenomMereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
                            <HBox.margin>
                               <Insets top="7.0" />
                            </HBox.margin>
@@ -270,7 +272,7 @@
                               <Insets bottom="3.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                        <Text fx:id="dateNaissanceMereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
                            <HBox.margin>
                               <Insets left="7.0" top="13.0" />
                            </HBox.margin>
@@ -284,7 +286,7 @@
                               <Insets bottom="3.0" />
                            </HBox.margin>
                         </Text>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+                        <Text fx:id="dateDecesMereText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
                      </children>
                   </HBox>
                </children>
@@ -298,10 +300,10 @@
                   <Insets left="7.0" top="5.0" />
                </HBox.margin>
             </Text>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
+            <Text fx:id="CNEEleveText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0" />
          </children>
       </HBox>
-      <HBox alignment="CENTER">
+      <HBox fx:id="departementEleveText" alignment="CENTER">
          <children>
             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Departement" wrappingWidth="115.0">
                <HBox.margin>
