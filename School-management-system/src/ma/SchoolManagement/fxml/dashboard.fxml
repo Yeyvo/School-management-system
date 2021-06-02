@@ -7,30 +7,25 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <BorderPane fx:id="border_pane" prefHeight="768.0" prefWidth="1100.0" styleClass="back-transparent" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.DashboardController">
    <left>
-      <HBox prefHeight="752.0" prefWidth="257.0" styleClass="back-white" BorderPane.alignment="CENTER">
+      <HBox styleClass="back-white" BorderPane.alignment="CENTER">
          <children>
-            <VBox prefHeight="768.0" prefWidth="270.0" styleClass="back-white" stylesheets="@../css/style.css">
+            <VBox prefHeight="768.0" prefWidth="210.0" styleClass="back-white" stylesheets="@../css/style.css">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="School management " wrappingWidth="259.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="School management " wrappingWidth="212.0">
                      <styleClass>
                         <String fx:value="fn-32" />
                         <String fx:value="txt-center" />
                      </styleClass>
                   </Text>
-                  <VBox alignment="CENTER">
-                     <padding>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="10.0" />
-                     </padding>
+                  <Pane prefHeight="683.0" prefWidth="221.0">
                      <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#show_eleve" prefHeight="77.0" prefWidth="183.0" text="Etudiant">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
+                        <Button layoutX="-1.0" layoutY="199.0" mnemonicParsing="false" onMouseClicked="#show_eleve" prefHeight="77.0" prefWidth="214.0" text="Etudiant">
                            <styleClass>
                               <String fx:value="back-transparent" />
                               <String fx:value="fn-18" />
@@ -43,11 +38,7 @@
                               </ImageView>
                            </graphic>
                         </Button>
-                     </children>
-                  </VBox>
-                  <VBox alignment="CENTER">
-                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#show_listeService" prefHeight="74.0" prefWidth="209.0" text="Services sociaux">
+                        <Button layoutX="-1.0" layoutY="276.0" mnemonicParsing="false" onMouseClicked="#show_listeService" prefHeight="74.0" prefWidth="213.0" text="Services sociaux">
                            <graphic>
                               <ImageView fitHeight="50.0" fitWidth="50.0" styleClass="back-transparent">
                                  <image>
@@ -55,25 +46,12 @@
                                  </image>
                               </ImageView>
                            </graphic>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
                            <styleClass>
                               <String fx:value="back-transparent" />
                               <String fx:value="fn-18" />
                            </styleClass>
                         </Button>
-                     </children>
-                     <padding>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                  </VBox>
-                  <VBox alignment="CENTER" layoutX="10.0" layoutY="219.0">
-                     <children>
-                        <Button mnemonicParsing="false" onMouseClicked="#show_listeService" prefHeight="74.0" prefWidth="209.0" text="Vers Excel">
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
+                        <Button layoutX="-1.0" layoutY="350.0" mnemonicParsing="false" onMouseClicked="#show_listeService" prefHeight="74.0" prefWidth="212.0" text="Vers Excel">
                            <styleClass>
                               <String fx:value="back-transparent" />
                               <String fx:value="fn-18" />
@@ -87,13 +65,10 @@
                            </graphic>
                         </Button>
                      </children>
-                     <padding>
-                        <Insets bottom="10.0" left="20.0" right="20.0" top="20.0" />
-                     </padding>
-                  </VBox>
+                  </Pane>
                </children>
                <HBox.margin>
-                  <Insets right="20.0" />
+                  <Insets />
                </HBox.margin>
             </VBox>
          </children>
