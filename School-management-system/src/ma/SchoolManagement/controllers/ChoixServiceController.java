@@ -58,7 +58,10 @@ public class ChoixServiceController  implements Initializable {
 	@FXML
 	private javafx.scene.control.TextField couvMed;
 	
-	private void edit_couvMed() throws IOException {
+	@FXML
+	private javafx.scene.control.Button modifCouvSoc;
+	
+	private void edit_couvSocial() throws IOException {
 		String id = idEtudiant.getText();
 		boolean ouiB = ouiBourse.isSelected();
 		boolean nonB = nonBourse.isSelected();
@@ -68,4 +71,23 @@ public class ChoixServiceController  implements Initializable {
 		boolean nonCM = nonCouvMed.isSelected();
 		String CM = couvMed.getText();
 	}
+	
+	@FXML
+	private javafx.scene.control.TreeTableView serviceSociauxTable;
+	
+	@FXML
+	private javafx.scene.control.TreeTableColumn idEtudColumn;
+	
+	@FXML
+	private javafx.scene.control.TreeTableColumn etabEtudColumn;
+	
+	@FXML
+	private javafx.scene.control.TreeTableColumn bourseEtudColumn;
+	
+	@FXML
+	private javafx.scene.control.TreeTableColumn CUEtudColumn;
+	
+	@FXML
+	private javafx.scene.control.TreeTableColumn couvMedEtudColumn;
+	
 }

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="436.0" prefWidth="404.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox prefHeight="436.0" prefWidth="404.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.controllerEleve">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="123.0" prefWidth="404.0" styleClass="back-light-gray">
          <children>
@@ -53,7 +53,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="adresseEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -67,7 +67,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="telephoneEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -81,7 +81,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="mailEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -95,7 +95,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="situationFamilialeEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -109,7 +109,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="RIBEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -131,8 +131,8 @@
                   </Text>
                   <HBox alignment="CENTER">
                      <children>
-                        <CheckBox mnemonicParsing="false" text="Pére" />
-                        <CheckBox mnemonicParsing="false" text="Mére">
+                        <CheckBox fx:id="pereDeces" mnemonicParsing="false" text="Pére" />
+                        <CheckBox fx:id="mereDeces" mnemonicParsing="false" text="Mére">
                            <HBox.margin>
                               <Insets left="10.0" />
                            </HBox.margin>
@@ -151,7 +151,7 @@
                         <Insets left="7.0" top="5.0" />
                      </HBox.margin>
                   </Text>
-                  <DatePicker prefHeight="25.0" prefWidth="147.0">
+                  <DatePicker fx:id="dateDecesMere" prefHeight="25.0" prefWidth="147.0">
                      <HBox.margin>
                         <Insets left="5.0" top="5.0" />
                      </HBox.margin>
@@ -160,7 +160,7 @@
             </HBox>
          </children>
       </VBox>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="610.0" text="Modifier">
+      <Button fx:id="modifEleve" mnemonicParsing="false" prefHeight="51.0" prefWidth="610.0" text="Modifier">
          <styleClass>
             <String fx:value="fn-24" />
             <String fx:value="back-green" />

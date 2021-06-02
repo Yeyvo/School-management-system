@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="605.0" prefWidth="602.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers">
+<VBox prefHeight="605.0" prefWidth="602.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.controllerEleve">
    <children>
       <HBox alignment="CENTER_LEFT" prefHeight="153.0" prefWidth="705.0" styleClass="back-light-gray">
          <children>
@@ -53,7 +53,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="nomEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -67,7 +67,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="prenomEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -83,12 +83,12 @@
                         </Text>
                         <HBox prefHeight="20.0" prefWidth="149.0">
                            <children>
-                              <RadioButton mnemonicParsing="false" text="HOMME">
+                              <RadioButton fx:id="sexeHomme" mnemonicParsing="false" text="HOMME">
                                  <HBox.margin>
                                     <Insets right="5.0" />
                                  </HBox.margin>
                               </RadioButton>
-                              <RadioButton mnemonicParsing="false" text="FEMME" />
+                              <RadioButton fx:id="sexeFemme" mnemonicParsing="false" text="FEMME" />
                            </children>
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
@@ -103,7 +103,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateNaissanceEleve" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -117,14 +117,14 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="adresseEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox layoutX="10.0" layoutY="85.0">
+                  <HBox fx:id="villeEleve" layoutX="10.0" layoutY="85.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Ville" wrappingWidth="115.0">
                            <HBox.margin>
@@ -145,7 +145,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="codePostalEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -159,7 +159,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="nationnaliteEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -173,7 +173,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="telephoneEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -187,7 +187,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="mailEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -201,7 +201,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="situationFamilialeEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -215,7 +215,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="RIBEleve">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -239,7 +239,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="CNIPere">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -253,7 +253,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="nomPere">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -270,7 +270,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="prenomPere">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -284,7 +284,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateNaissancePere" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -298,7 +298,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateDecesPere" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -313,7 +313,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="CNIMere">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -327,7 +327,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="nomMere">
                            <opaqueInsets>
                               <Insets />
                            </opaqueInsets>
@@ -344,7 +344,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField>
+                        <TextField fx:id="prenomMere">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -358,7 +358,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateNaissanceMere" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -372,7 +372,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateDecesMere" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -390,7 +390,7 @@
                   <Insets left="7.0" top="5.0" />
                </HBox.margin>
             </Text>
-            <TextField>
+            <TextField fx:id="CNEEleve">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
@@ -404,14 +404,14 @@
                   <Insets left="7.0" top="5.0" />
                </HBox.margin>
             </Text>
-            <TextField>
+            <TextField fx:id="departementEleve">
                <HBox.margin>
                   <Insets left="5.0" top="5.0" />
                </HBox.margin>
             </TextField>
          </children>
       </HBox>
-      <Button mnemonicParsing="false" prefHeight="51.0" prefWidth="610.0" text="Ajouter">
+      <Button fx:id="ajoutEleve" mnemonicParsing="false" prefHeight="51.0" prefWidth="610.0" text="Ajouter">
          <styleClass>
             <String fx:value="fn-24" />
             <String fx:value="back-green" />

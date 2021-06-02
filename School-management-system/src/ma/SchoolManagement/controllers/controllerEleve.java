@@ -17,6 +17,7 @@ import ma.SchoolManagement.helpers.DynamicViews;
 public class controllerEleve  implements Initializable {
 
 	
+	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {		
 	}
@@ -119,6 +120,8 @@ public class controllerEleve  implements Initializable {
 	@FXML
 	private javafx.scene.control.TextField departementEleve;
 	
+	@FXML
+	private javafx.scene.control.Button ajoutEleve;
 	
 	
 	@FXML
@@ -156,6 +159,8 @@ public class controllerEleve  implements Initializable {
 	@FXML
 	private javafx.scene.control.CheckBox mereDeces;
 	
+	@FXML
+	private javafx.scene.control.Button modifEleve;
 	
 	@FXML
 	private void edit_eleve() throws IOException{
@@ -168,5 +173,7 @@ public class controllerEleve  implements Initializable {
 		boolean mere = mereDeces.isSelected();
 		LocalDate ddd = dateDecesMere.getValue();
 	}
+	
+
 	
 }
