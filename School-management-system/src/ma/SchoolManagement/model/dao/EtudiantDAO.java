@@ -65,6 +65,30 @@ public class EtudiantDAO extends DAO<Etudiant> {
 //		}
 //		return false;
 //	}
+	
+	/*public boolean createimport(Etudiant obj) {
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			System.out.println("INSERT INTO Etudiant (EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
+					+ obj.toStringimport() + ")");
+			int result = stmt.executeUpdate(
+					"INSERT INTO Etudiant (EtudId ,EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
+							+ obj.toStringimport() + ")");
+			System.out.println(result + " Row affected ! ");
+			return true;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		return false;
+	}*/
+	
 	@Override
 	public boolean create(Etudiant obj) {
 		Statement stmt = null;
