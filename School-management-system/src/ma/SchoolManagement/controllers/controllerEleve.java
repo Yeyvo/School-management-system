@@ -43,8 +43,9 @@ public class controllerEleve implements Initializable {
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		search();
 		if(etudiants != null) {
-			Iterator iter = etudiants.iterator();
-			setBig((Etudiant) iter.next());
+			Iterator<Etudiant> iter = etudiants.iterator();
+			if(iter.hasNext())
+				setBig(iter.next());
 		}
 	}
 

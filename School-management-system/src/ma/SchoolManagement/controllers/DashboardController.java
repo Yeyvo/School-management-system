@@ -102,7 +102,6 @@ public class DashboardController implements Initializable {
 		font.setBold(true);
 		font.setItalic(false);
 
-//	    stylecellhead.setFillBackgroundColor(IndexedColors.BRIGHT_GREEN.getIndex());
 		stylecellhead.setFillForegroundColor(IndexedColors.SEA_GREEN.getIndex());
 		stylecellhead.setFillPattern(FillPatternType.SOLID_FOREGROUND);
 		stylecellhead.setAlignment(HorizontalAlignment.CENTER);
@@ -114,7 +113,6 @@ public class DashboardController implements Initializable {
 		XSSFFont fontbase = workbook.createFont();
 		font.setFontHeightInPoints((short) 10);
 		font.setFontName("Arial");
-//	    font.setColor(IndexedColors.WHITE.getIndex());
 		font.setBold(true);
 		font.setItalic(false);
 

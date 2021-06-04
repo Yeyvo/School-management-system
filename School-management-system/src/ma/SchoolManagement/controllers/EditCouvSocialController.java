@@ -48,6 +48,8 @@ public class EditCouvSocialController implements Initializable {
 		boolean ouiCM = ouiCouvMed.isSelected();
 		boolean nonCM = nonCouvMed.isSelected();
 		String CM = couvMed.getText();
+		
+		
 	}
 
 	@Override
