@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<BorderPane fx:id="border_pane" prefHeight="635.0" prefWidth="1124.0" styleClass="back-transparent" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.DashboardController">
+   <left>
+      <HBox styleClass="back-white" BorderPane.alignment="CENTER">
+         <children>
+            <VBox prefHeight="635.0" prefWidth="186.0" styleClass="back-white" stylesheets="@../css/style.css">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="School management " wrappingWidth="212.0">
+                     <styleClass>
+                        <String fx:value="fn-32" />
+                        <String fx:value="txt-center" />
+                     </styleClass>
+                  </Text>
+                  <Pane prefHeight="549.0" prefWidth="185.0">
+                     <children>
+                        <Button layoutX="-1.0" layoutY="72.0" mnemonicParsing="false" onMouseClicked="#show_eleve" prefHeight="77.0" prefWidth="214.0">
+                           <styleClass>
+                              <String fx:value="back-transparent" />
+                              <String fx:value="fn-18" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../icons/hat.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="-1.0" layoutY="149.0" mnemonicParsing="false" onMouseClicked="#show_listeService" prefHeight="74.0" prefWidth="213.0">
+                           <styleClass>
+                              <String fx:value="back-transparent" />
+                              <String fx:value="fn-18" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="56.0" fitWidth="51.0">
+                                 <image>
+                                    <Image url="@../icons/services.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="-1.0" layoutY="223.0" mnemonicParsing="false" onAction="#etablissement" prefHeight="74.0" prefWidth="212.0">
+                           <styleClass>
+                              <String fx:value="back-transparent" />
+                              <String fx:value="fn-18" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="54.0" fitWidth="68.0">
+                                 <image>
+                                    <Image url="@../icons/school.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="-1.0" layoutY="297.0" mnemonicParsing="false" onAction="#filieres" prefHeight="74.0" prefWidth="212.0">
+                           <styleClass>
+                              <String fx:value="back-transparent" />
+                              <String fx:value="fn-18" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView>
+                                 <image>
+                                    <Image url="@../icons/filiere.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                        <Button layoutX="-1.0" layoutY="371.0" mnemonicParsing="false" onAction="#toexcel" prefHeight="74.0" prefWidth="212.0">
+                           <styleClass>
+                              <String fx:value="back-transparent" />
+                              <String fx:value="fn-18" />
+                           </styleClass>
+                           <graphic>
+                              <ImageView fitHeight="50.0" fitWidth="50.0">
+                                 <image>
+                                    <Image url="@../icons/excel.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                        </Button>
+                     </children>
+                  </Pane>
+               </children>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </VBox>
+         </children>
+      </HBox>
+   </left>
+</BorderPane>

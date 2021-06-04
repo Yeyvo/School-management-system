@@ -12,9 +12,9 @@ public class Etudiant {
 	String CnieMere, EtudNomm, Etudprem;
 	LocalDate EtudDNM, EtudDDM;
 
-	public Etudiant(int etudId, String etudCNE, String etudNom, String etudPrenom, String etudSfam,
-			String etudNat, LocalDate etudNai, String etudSexe, String etudAd1, int etudCPS, String etudVil, String etudDpt, String etudTel,
-			String etudMail, String etudRib, String cniePere, String etudNomp, String etudPrep,
+	public Etudiant(int etudId, String etudCNE, String etudNom, String etudPrenom, String etudSfam, String etudNat,
+			LocalDate etudNai, String etudSexe, String etudAd1, int etudCPS, String etudVil, String etudDpt,
+			String etudTel, String etudMail, String etudRib, String cniePere, String etudNomp, String etudPrep,
 			LocalDate etudDNP, LocalDate etudDDP, String cnieMere, String etudNomm, String etudprem, LocalDate etudDNM,
 			LocalDate etudDDM) {
 		EtudId = etudId;
@@ -246,13 +246,19 @@ public class Etudiant {
 
 	@Override
 	public String toString() {
-		return  EtudId + "," + EtudCPS + ",'" + EtudCNE + "','" + EtudNom + "','" + EtudPre + "','" + EtudSfam
-				+ "','" + EtudNat + "','" + EtudSexe + "','" + EtudAd1 + "','" + EtudVil + "','" + EtudDpt + "','"
-				+ EtudTel + "','" + EtudMail + "','" + EtudRib + "','" + EtudNai + "','" + CniePere + "','" + EtudNomp
-				+ "','" + EtudPrep + "','" + EtudDNP + "','" + EtudDDP + "','" + CnieMere + "','" + EtudNomm + "','"
-				+ Etudprem + "','" + EtudDNM + "','" + EtudDDM + "'";
+		return /* nullcheck(EtudId) +",'"*/ "'" +  nullcheck(EtudCNE) + "','" + nullcheck(EtudNom) + "','"
+				+ nullcheck(EtudPre) + "','" + nullcheck(EtudSfam) + "','" + nullcheck(EtudNat) + "','"
+				+ nullcheck(EtudNai) + "','" + nullcheck(EtudSexe) + "','" + nullcheck(EtudAd1) + "',"
+				+ nullcheck(EtudCPS) + ",'" + nullcheck(EtudVil) + "','" + nullcheck(EtudDpt) + "','"
+				+ nullcheck(EtudTel) + "','" + nullcheck(EtudMail) + "','" + nullcheck(EtudRib) + "','"
+				+ nullcheck(CniePere) + "','" + nullcheck(EtudNomp) + "','" + nullcheck(EtudPrep) + "','"
+				+ nullcheck(EtudDNP) + "','" + nullcheck(EtudDDP) + "','" + nullcheck(CnieMere) + "','"
+				+ nullcheck(EtudNomm) + "','" + nullcheck(Etudprem) + "','" + nullcheck(EtudDNM) + "','"
+				+ nullcheck(EtudDDM) + "'";
 	}
-	
-	
+
+	public Object nullcheck(Object obj) {
+		return obj == null ? "null" : obj;
+	}
 
 }

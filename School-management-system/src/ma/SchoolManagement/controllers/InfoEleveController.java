@@ -1,78 +1,142 @@
 package ma.SchoolManagement.controllers;
 
+import java.net.URL;
+import java.util.ResourceBundle;
+
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.text.Text;
+import ma.SchoolManagement.model.Etudiant;
 
-public class InfoEleveController {
-
-	@FXML
-	private javafx.scene.text.Text nomEleveText;
-
-	@FXML
-	private javafx.scene.text.Text prenomEleveText;
+public class InfoEleveController implements Initializable {
 
 	@FXML
-	private javafx.scene.text.Text sexeText;
+	private Text nomEleveText;
 
 	@FXML
-	private javafx.scene.text.Text dateNaissanceEleveText;
+	private Text prenomEleveText;
 
 	@FXML
-	private javafx.scene.text.Text adresseEleveText;
+	private Text sexeText;
 
 	@FXML
-	private javafx.scene.text.Text villeEleveText;
+	private Text dateNaissanceEleveText;
 
 	@FXML
-	private javafx.scene.text.Text codePostalEleveText;
+	private Text adresseEleveText;
 
 	@FXML
-	private javafx.scene.text.Text nationnaliteEleveText;
+	private Text villeEleveText;
 
 	@FXML
-	private javafx.scene.text.Text telephoneEleveText;
+	private Text codePostalEleveText;
 
 	@FXML
-	private javafx.scene.text.Text mailEleveText;
+	private Text nationnaliteEleveText;
 
 	@FXML
-	private javafx.scene.text.Text situationFamilialeEleveText;
+	private Text telephoneEleveText;
 
 	@FXML
-	private javafx.scene.text.Text RIBEleveText;
+	private Text mailEleveText;
 
 	@FXML
-	private javafx.scene.text.Text CNIPereText;
+	private Text situationFamilialeEleveText;
 
 	@FXML
-	private javafx.scene.text.Text nomPereText;
+	private Text RIBEleveText;
 
 	@FXML
-	private javafx.scene.text.Text prenomPereText;
+	private Text CNIPereText;
 
 	@FXML
-	private javafx.scene.text.Text dateNaissancePereText;
+	private Text nomPereText;
 
 	@FXML
-	private javafx.scene.text.Text dateDecesPereText;
+	private Text prenomPereText;
 
 	@FXML
-	private javafx.scene.text.Text CNIMereText;
+	private Text dateNaissancePereText;
 
 	@FXML
-	private javafx.scene.text.Text nomMereText;
+	private Text dateDecesPereText;
 
 	@FXML
-	private javafx.scene.text.Text prenomMereText;
+	private Text CNIMereText;
 
 	@FXML
-	private javafx.scene.text.Text dateNaissanceMereText;
+	private Text nomMereText;
 
 	@FXML
-	private javafx.scene.text.Text dateDecesMereText;
+	private Text prenomMereText;
 
 	@FXML
-	private javafx.scene.text.Text CNEEleveText;
+	private Text dateNaissanceMereText;
 
 	@FXML
-	private javafx.scene.text.Text departementEleveText;
+	private Text dateDecesMereText;
+
+	@FXML
+	private Text CNEEleveText;
+
+	@FXML
+	private Text departementEleveText;
+	
+	private Etudiant elv;
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	public Etudiant getElv() {
+		return elv;
+	}
+
+	public void setElv(Etudiant elv) {
+		this.elv = elv;
+		nomEleveText.setText(elv.getEtudNom());
+		prenomEleveText.setText(elv.getEtudPrenom());
+		sexeText.setText(elv.getEtudSexe());
+		dateNaissanceEleveText.setText(elv.getEtudNai().toString());
+		adresseEleveText.setText(elv.getEtudAd1());
+		villeEleveText.setText(elv.getEtudVil());
+		codePostalEleveText.setText(String.valueOf(elv.getEtudCPS()));
+		nationnaliteEleveText.setText(elv.getEtudNat());
+		
+		telephoneEleveText.setText(elv.getEtudTel());
+		mailEleveText.setText(elv.getEtudMail());
+		situationFamilialeEleveText.setText(elv.getEtudSfam());
+		RIBEleveText.setText(elv.getEtudRib());
+		CNIPereText.setText(elv.getCniePere());
+		nomPereText.setText(elv.getEtudNomp());
+		prenomPereText.setText(elv.getEtudPrenom());
+		dateNaissancePereText.setText(elv.getEtudDNP().toString());
+		
+		dateDecesPereText.setText(elv.getEtudDDP().toString());
+		CNIMereText.setText(elv.getCnieMere());
+		nomMereText.setText(elv.getEtudNomm());
+		prenomMereText.setText(elv.getEtudprem());
+		dateNaissanceMereText.setText(elv.getEtudDNM().toString());
+		dateDecesMereText.setText(elv.getEtudDDM().toString());
+		CNEEleveText.setText(elv.getEtudCNE());
+		departementEleveText.setText(elv.getEtudDpt());
+		
+	}
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

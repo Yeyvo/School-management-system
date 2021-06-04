@@ -10,36 +10,28 @@ import javafx.scene.control.Button;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
 
-public class EditCouvSocialController implements Initializable {
+public class AddCouvSocialController implements Initializable {
 
 	@FXML
 	private TextField idEtudiant;
-	
 	@FXML
 	private RadioButton ouiBourse;
-	
 	@FXML
 	private RadioButton nonBourse;
-	
 	@FXML
 	private RadioButton ouiCiteUniv;
-	
 	@FXML
 	private RadioButton nonCiteUniv;
-	
 	@FXML
 	private RadioButton ouiCouvMed;
-	
 	@FXML
 	private RadioButton nonCouvMed;
-	
 	@FXML
 	private TextField couvMed;
-	
 	@FXML
 	private Button modifCouvSoc;
 	
-	private void edit_couvSocial() throws IOException {
+	private void add_couvSocial() throws IOException {
 		String id = idEtudiant.getText();
 		boolean ouiB = ouiBourse.isSelected();
 		boolean nonB = nonBourse.isSelected();

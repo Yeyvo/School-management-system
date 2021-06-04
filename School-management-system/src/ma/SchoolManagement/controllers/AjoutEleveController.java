@@ -1,116 +1,148 @@
 package ma.SchoolManagement.controllers;
 
 import java.io.IOException;
+import java.net.URL;
 import java.time.LocalDate;
+import java.util.ResourceBundle;
 
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.Button;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.RadioButton;
+import javafx.scene.control.TextField;
+import ma.SchoolManagement.model.Etudiant;
+import ma.SchoolManagement.model.dao.DAOFactory;
 
-public class AjoutEleveController {
-
-	@FXML
-	private javafx.scene.control.TextField nomEleve;
-
-	@FXML
-	private javafx.scene.control.TextField prenomEleve;
-
-	@FXML
-	private javafx.scene.control.RadioButton sexeHomme;
-
-	@FXML
-	private javafx.scene.control.RadioButton sexeFemme;
+public class AjoutEleveController implements Initializable {
 
 	@FXML
-	private javafx.scene.control.DatePicker dateNaissanceEleve;
+	private TextField nomEleve;
 
 	@FXML
-	private javafx.scene.control.TextField adresseEleve;
+	private TextField prenomEleve;
 
 	@FXML
-	private javafx.scene.control.TextField villeEleve;
+	private RadioButton sexeHomme;
 
 	@FXML
-	private javafx.scene.control.TextField codePostalEleve;
+	private RadioButton sexeFemme;
 
 	@FXML
-	private javafx.scene.control.TextField nationnaliteEleve;
+	private DatePicker dateNaissanceEleve;
 
 	@FXML
-	private javafx.scene.control.TextField telephoneEleve;
+	private TextField adresseEleve;
 
 	@FXML
-	private javafx.scene.control.TextField mailEleve;
+	private TextField villeEleve;
 
 	@FXML
-	private javafx.scene.control.TextField situationFamilialeEleve;
+	private TextField codePostalEleve;
 
 	@FXML
-	private javafx.scene.control.TextField RIBEleve;
+	private TextField nationnaliteEleve;
 
 	@FXML
-	private javafx.scene.control.TextField CNIPere;
+	private TextField telephoneEleve;
 
 	@FXML
-	private javafx.scene.control.TextField nomPere;
+	private TextField mailEleve;
 
 	@FXML
-	private javafx.scene.control.TextField prenomPere;
+	private TextField situationFamilialeEleve;
 
 	@FXML
-	private javafx.scene.control.DatePicker dateNaissancePere;
+	private TextField RIBEleve;
 
 	@FXML
-	private javafx.scene.control.DatePicker dateDecesPere;
+	private TextField CNIPere;
 
 	@FXML
-	private javafx.scene.control.TextField CNIMere;
+	private TextField nomPere;
 
 	@FXML
-	private javafx.scene.control.TextField nomMere;
+	private TextField prenomPere;
 
 	@FXML
-	private javafx.scene.control.TextField prenomMere;
+	private DatePicker dateNaissancePere;
 
 	@FXML
-	private javafx.scene.control.DatePicker dateNaissanceMere;
+	private DatePicker dateDecesPere;
 
 	@FXML
-	private javafx.scene.control.DatePicker dateDecesMere;
+	private TextField CNIMere;
 
 	@FXML
-	private javafx.scene.control.TextField CNEEleve;
+	private TextField nomMere;
 
 	@FXML
-	private javafx.scene.control.TextField departementEleve;
+	private TextField prenomMere;
 
 	@FXML
-	private javafx.scene.control.Button ajoutEleve;
+	private DatePicker dateNaissanceMere;
+
+	@FXML
+	private DatePicker dateDecesMere;
+
+	@FXML
+	private TextField CNEEleve;
+
+	@FXML
+	private TextField departementEleve;
+
+	@FXML
+	private Button ajoutEleve;
+	
+	boolean homme ;
+	boolean femme ;
+	String nom, prenom,etudNat, etudAd1,ville,codePostal,tudNat,tel,mail,etudSfam,RIB,CNE,dpt ,CNIP ,nomP,prenomP,CNIM , nomM ,prenomM ;
+	LocalDate etudNai, ddnPereLocal, dddPereLocal, ddnMereLocal , dddMereLocal;
+
 
 	@FXML
 	private void add_eleve() throws IOException {
-		String nom = nomEleve.getText();
-		String prenom = prenomEleve.getText();
-		boolean homme = sexeHomme.isSelected();
-		boolean femme = sexeFemme.isSelected();
-		LocalDate ddnEleveLocal = dateNaissanceEleve.getValue();
-		String adresse = adresseEleve.getText();
-		String ville = villeEleve.getText();
-		String codePostal = codePostalEleve.getText();
-		String nationnalite = nationnaliteEleve.getText();
-		String tel = telephoneEleve.getText();
-		String mail = mailEleve.getText();
-		String sFEleve = situationFamilialeEleve.getText();
-		String RIB = RIBEleve.getText();
-		String CNE = CNEEleve.getText();
-		String dpt = departementEleve.getText();
-		String CNIP = CNIPere.getText();
-		String nomP = nomPere.getText();
-		String prenomP = prenomPere.getText();
-		LocalDate ddnPereLocal = dateNaissancePere.getValue();
-		LocalDate dddPereLocal = dateDecesPere.getValue();
-		String CNIM = CNIMere.getText();
-		String nomM = nomMere.getText();
-		String prenomM = prenomMere.getText();
-		LocalDate ddnMereLocal = dateNaissancePere.getValue();
-		LocalDate dddMereLocal = dateDecesPere.getValue();
+		 nom = nomEleve.getText();
+		 prenom = prenomEleve.getText();
+		 homme = sexeHomme.isSelected();
+		 femme = sexeFemme.isSelected();
+		 etudNai = dateNaissanceEleve.getValue();
+		 etudAd1 = adresseEleve.getText();
+		 ville = villeEleve.getText();
+		 codePostal = codePostalEleve.getText();
+		 etudNat = nationnaliteEleve.getText();
+		 tel = telephoneEleve.getText();
+		 mail = mailEleve.getText();
+		 etudSfam = situationFamilialeEleve.getText();
+		 RIB = RIBEleve.getText();
+		 CNE = CNEEleve.getText();
+		 dpt = departementEleve.getText();
+		 CNIP = CNIPere.getText();
+		 nomP = nomPere.getText();
+		 prenomP = prenomPere.getText();
+		 ddnPereLocal = dateNaissancePere.getValue();
+		 dddPereLocal = dateDecesPere.getValue();
+		 CNIM = CNIMere.getText();
+		 nomM = nomMere.getText();
+		 prenomM = prenomMere.getText();
+		 ddnMereLocal = dateNaissancePere.getValue();
+		 dddMereLocal = dateDecesPere.getValue();
+
+		Etudiant data = new Etudiant(0, CNE, nom, prenom, etudSfam, etudNat, etudNai, (homme ? "Male" : "Female"),
+				etudAd1, Integer.valueOf(codePostal), ville, dpt, tel, mail, RIB, CNIP, nomP, prenomP, ddnPereLocal,
+				dddPereLocal, CNIM, nomM, prenomM, ddnMereLocal, dddMereLocal);
+		if (!DAOFactory.getEtudiantDAO().create(data)) {
+			Alert alert = new Alert(AlertType.WARNING, "Ajout impossible");
+			alert.show();
+		}
 	}
+
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {
+		// TODO Auto-generated method stub
+
+	}
+
 }

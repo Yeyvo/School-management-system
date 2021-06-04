@@ -1,0 +1,134 @@
+.fn-14 {
+  -fx-font-size: 14px;
+}
+.fn-16 {
+  -fx-font-size: 16px;
+}
+.fn-18 {
+  -fx-font-size: 18px;
+}
+.fn-24 {
+  -fx-font-size: 24px;
+}
+.fn-32 {
+  -fx-font-size: 32px;
+}
+.fn-48 {
+  -fx-font-size: 48px;
+}
+.fn-64 {
+  -fx-font-size: 64px;
+}
+
+.txt-center {
+  -fx-text-alignment: center;
+}
+
+.txt-justify {
+  -fx-text-alignment: justify;
+}
+
+.txt-left {
+  -fx-text-alignment: left;
+}
+
+.txt-right {
+  -fx-text-alignment: right;
+}
+
+.back-white {
+  -fx-background-color: #ffffff;
+}
+
+.back-transparent {
+  -fx-background-color: transparent;
+  -fx-background-radius: 0px;
+}
+
+.back-light-gray {
+  -fx-background-color: #ececec;
+}
+
+/* .menu-btn {
+  -fx-background-color: transparent;
+  /* -fx-border-color: #7f1c27;
+  -fx-border-radius: 0; 
+  -fx-text-fill: #7f1c27;
+  
+  
+   -fx-skin: 'ma.gestioncov.views.btnmenuskinSkin';
+  
+} */
+.scrollpane {
+  -fx-background-color: transparent;
+}
+
+/* .menu {
+  -fx-border-color: #7f1c27;
+  -fx-border-radius: 13px;
+  -fx-background-radius: 13px;
+  -fx-background-color: white;
+} */
+
+.scroll-bar:horizontal .track,
+.scroll-bar:vertical .track {
+  -fx-background-color: transparent;
+  -fx-border-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-border-radius: 2em;
+}
+
+.scroll-bar:horizontal .increment-button,
+.scroll-bar:horizontal .decrement-button {
+  -fx-background-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-padding: 0 0 10 0;
+}
+
+.scroll-bar:vertical .increment-button,
+.scroll-bar:vertical .decrement-button {
+  -fx-background-color: transparent;
+  -fx-background-radius: 0em;
+  -fx-padding: 0 10 0 0;
+}
+
+.scroll-bar .increment-arrow,
+.scroll-bar .decrement-arrow {
+  -fx-shape: " ";
+  -fx-padding: 0.15em 0;
+}
+
+.scroll-bar:vertical .increment-arrow,
+.scroll-bar:vertical .decrement-arrow {
+  -fx-shape: " ";
+  -fx-padding: 0 0.15em;
+}
+
+.scroll-bar:horizontal .thumb,
+.scroll-bar:vertical .thumb {
+  -fx-background-color: derive(black, 90%);
+  -fx-background-insets: 2, 0, 0;
+  -fx-background-radius: 2em;
+}
+
+.scroll-bar:horizontal .thumb:hover,
+.scroll-bar:vertical .thumb:hover {
+  -fx-background-color: derive(#8bc34a, 10%);
+  -fx-background-insets: 2, 0, 0;
+  -fx-background-radius: 2em;
+}
+
+.scroll-bar:vertical .track-background {
+  -fx-opacity: 0;
+}
+
+.scroll-bar:vertical .track {
+  -fx-opacity: 0;
+}
+
+.scroll-bar {
+  -fx-background-color: transparent;
+  -fx-background-radius: 2em;
+  -fx-focus-color: transparent;
+  -fx-faint-focus-color: transparent;
+}

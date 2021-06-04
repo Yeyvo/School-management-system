@@ -6,6 +6,7 @@
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -18,7 +19,7 @@
          <children>
             <ImageView fitHeight="156.0" fitWidth="148.0" styleClass="back-transparent">
                <image>
-                  <Image url="@../../../../resources/student-color.png" />
+                  <Image url="@../icons/student-color.png" />
                </image>
             </ImageView>
             <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
@@ -87,8 +88,11 @@
                                  <HBox.margin>
                                     <Insets right="5.0" />
                                  </HBox.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="sexe" />
+                                 </toggleGroup>
                               </RadioButton>
-                              <RadioButton fx:id="sexeFemme" mnemonicParsing="false" text="FEMME" />
+                              <RadioButton fx:id="sexeFemme" mnemonicParsing="false" text="FEMME" toggleGroup="$sexe" />
                            </children>
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
@@ -103,7 +107,7 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker fx:id="dateNaissanceEleve" prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateNaissanceEleve" editable="false" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -124,7 +128,7 @@
                         </TextField>
                      </children>
                   </HBox>
-                  <HBox fx:id="villeEleve" layoutX="10.0" layoutY="85.0">
+                  <HBox layoutX="10.0" layoutY="85.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Ville" wrappingWidth="115.0">
                            <HBox.margin>
@@ -284,7 +288,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker fx:id="dateNaissancePere" prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateNaissancePere" editable="false" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -298,7 +302,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker fx:id="dateDecesPere" prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateDecesPere" editable="false" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -358,7 +362,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker fx:id="dateNaissanceMere" prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateNaissanceMere" editable="false" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -372,7 +376,7 @@
                               <Insets left="7.0" />
                            </HBox.margin>
                         </Text>
-                        <DatePicker fx:id="dateDecesMere" prefHeight="25.0" prefWidth="147.0">
+                        <DatePicker fx:id="dateDecesMere" editable="false" prefHeight="25.0" prefWidth="147.0">
                            <HBox.margin>
                               <Insets left="5.0" top="5.0" />
                            </HBox.margin>
@@ -411,7 +415,7 @@
             </TextField>
          </children>
       </HBox>
-      <Button fx:id="ajoutEleve" mnemonicParsing="false" prefHeight="51.0" prefWidth="610.0" text="Ajouter">
+      <Button mnemonicParsing="false" onAction="#add_eleve" prefHeight="51.0" prefWidth="610.0" text="Ajouter">
          <styleClass>
             <String fx:value="fn-24" />
             <String fx:value="back-green" />

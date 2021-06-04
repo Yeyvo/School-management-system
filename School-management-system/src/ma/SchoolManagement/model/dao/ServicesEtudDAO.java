@@ -1,4 +1,4 @@
-package ma.SchoolManagement.dao;
+package ma.SchoolManagement.model.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,30 +7,24 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import ma.SchoolManagement.model.Etudiant;
+import ma.SchoolManagement.model.ServicesEtud;
 
-public class EtudiantDAO extends DAO<Etudiant> {
+public class ServicesEtudDAO extends DAO<ServicesEtud> {
 
-	public EtudiantDAO(Connection conn) {
+	public ServicesEtudDAO(Connection conn) {
 		super(conn);
 	}
 
 	@Override
-	public Set<Etudiant> all() {
-		Set<Etudiant> set_Etudiant = new HashSet<>();
+	public Set<ServicesEtud> all() {
+		Set<ServicesEtud> set_ServicesEtud = new HashSet<>();
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			ResultSet result = stmt.executeQuery("SELECT * FROM Etudiant");
+			ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud");
 			while (result.next()) {
-				set_Etudiant.add(new Etudiant(result.getInt(1), result.getString(2), result.getString(3),
-						result.getString(4), result.getString(5), result.getString(6), result.getDate(7).toLocalDate(),
-						result.getString(8), result.getString(9), result.getInt(10), result.getString(11),
-						result.getString(12), result.getString(13), result.getString(14), result.getString(15),
-						result.getString(16), result.getString(17), result.getString(18),
-						result.getDate(19).toLocalDate(), result.getDate(20).toLocalDate(), result.getString(21),
-						result.getString(22), result.getString(23), result.getDate(24).toLocalDate(),
-						result.getDate(25).toLocalDate()));
+				set_ServicesEtud.add(
+						new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3), result.getBoolean(4), result.getBoolean(5), result.getString(6)));
 			}
 			result.close();
 		} catch (SQLException e) {
@@ -43,15 +37,15 @@ public class EtudiantDAO extends DAO<Etudiant> {
 			}
 		}
 
-		return set_Etudiant;
+		return set_ServicesEtud;
 	}
 
 	@Override
-	public boolean create(Etudiant obj) {
+	public boolean create(ServicesEtud obj) {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("INSERT INTO Etudiant VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO ServicesEtud VALUES(" + obj.toString() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {
@@ -67,11 +61,12 @@ public class EtudiantDAO extends DAO<Etudiant> {
 	}
 
 	@Override
-	public boolean delete(Etudiant obj) {
+	public boolean delete(ServicesEtud obj) {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("DELETE FROM Etudiant WHERE EtudId  = " + obj.getEtudId());
+			int result = stmt.executeUpdate("DELETE FROM ServicesEtud WHERE EtudId  = " + obj.getEtudId()
+					+ " and EtudANS = '" + obj.getEtudANSC() + "'");
 			System.out.println(result + " Row affected !");
 			return (true);
 		} catch (SQLException e) {
@@ -87,7 +82,7 @@ public class EtudiantDAO extends DAO<Etudiant> {
 	}
 
 	@Override
-	public boolean update(Etudiant oldobj, Etudiant newobj) {
+	public boolean update(ServicesEtud oldobj, ServicesEtud newobj) {
 		try {
 			delete(oldobj);
 			create(newobj);
@@ -97,6 +92,5 @@ public class EtudiantDAO extends DAO<Etudiant> {
 		}
 		return false;
 	}
-
 
 }

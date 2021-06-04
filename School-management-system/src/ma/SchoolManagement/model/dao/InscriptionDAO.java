@@ -1,4 +1,4 @@
-package ma.SchoolManagement.model;
+package ma.SchoolManagement.model.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,7 +7,7 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import ma.SchoolManagement.dao.DAO;
+import ma.SchoolManagement.model.Inscription;
 
 public class InscriptionDAO extends DAO<Inscription> {
 

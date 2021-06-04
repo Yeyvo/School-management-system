@@ -1,4 +1,4 @@
-package ma.SchoolManagement.dao;
+package ma.SchoolManagement.model.dao;
 
 import java.sql.Connection;
 import java.util.Set;

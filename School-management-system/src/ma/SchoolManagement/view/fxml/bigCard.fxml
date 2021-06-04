@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox alignment="CENTER" prefHeight="273.0" prefWidth="467.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardStudentController">
+   <children>
+      <ImageView fitHeight="156.0" fitWidth="148.0" styleClass="back-transparent">
+         <image>
+            <Image url="@../icons/student-color.png" />
+         </image>
+      </ImageView>
+      <VBox prefHeight="263.0" prefWidth="242.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+         <children>
+            <Text fx:id="nomprenom" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-18" text="NOM + Prenom">
+               <VBox.margin>
+                  <Insets bottom="10.0" left="7.0" top="7.0" />
+               </VBox.margin>
+            </Text>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="adresse" wrappingWidth="115.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="addresse" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Téléphone" wrappingWidth="115.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="tele" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Mail" wrappingWidth="115.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="mail" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="situation familiale" wrappingWidth="115.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="sfam" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="RIB" wrappingWidth="115.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="rib" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Date naissance" wrappingWidth="115.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="dn" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin></Text>
+               </children>
+            </HBox>
+            <HBox />
+            <Button fx:id="infoBtn" alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onMouseClicked="#show_info" prefHeight="51.0" prefWidth="238.0" text="Plus d'informations">
+               <styleClass>
+                  <String fx:value="fn-24" />
+                  <String fx:value="back-green" />
+                  <String fx:value="flat" />
+               </styleClass>
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+            </Button>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="263.0" prefWidth="75.0">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#delete" text="DELETE">
+               <styleClass>
+                  <String fx:value="fn-14" />
+                  <String fx:value="back-transparent" />
+                  <String fx:value="fill-red" />
+               </styleClass>
+            </Button>
+            <Button fx:id="editBtn" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#show_edit" text="EDIT">
+               <styleClass>
+                  <String fx:value="fn-14" />
+                  <String fx:value="back-transparent" />
+                  <String fx:value="fill-green" />
+               </styleClass>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+   <padding>
+      <Insets bottom="10.0" />
+   </padding>
+   <effect>
+      <DropShadow />
+   </effect>
+</HBox>

@@ -12,7 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 import ma.SchoolManagement.Main;
-import ma.SchoolManagement.helpers.DynamicViews;
+import ma.SchoolManagement.view.SceneNames;
+import ma.SchoolManagement.view.helpers.DynamicViews;
 
 public class ChoixServiceController implements Initializable {
 
@@ -22,13 +23,21 @@ public class ChoixServiceController implements Initializable {
 
 	@FXML
 	private void show_liste(MouseEvent event) throws IOException {
-		Main.getControllerdashboard().updatetoliste();
+		((DashboardController)Main.getScenesloaders().get(SceneNames.DASHBOARD).getController()).updatetoliste();
 	}
 
 	@FXML
 	private void show_mod(MouseEvent event) throws IOException {
 		Parent home = FXMLLoader.load(
-				new DynamicViews().getClass().getResource("/ma/SchoolManagement/fxml/edit_couverture_sociale.fxml"));
+				new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_couverture_sociale.fxml"));
+		Stage stage = new Stage();
+		stage.setScene(new Scene(home));
+		stage.show();
+	}
+	@FXML
+	private void show_add(MouseEvent event) throws IOException {
+		Parent home = FXMLLoader.load(
+				new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/add_couverture_sociale.fxml"));
 		Stage stage = new Stage();
 		stage.setScene(new Scene(home));
 		stage.show();

@@ -1,4 +1,4 @@
-package ma.SchoolManagement.model;
+package ma.SchoolManagement.model.dao;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,24 +7,23 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import ma.SchoolManagement.dao.DAO;
+import ma.SchoolManagement.model.Filiere;
 
-public class ServicesEtudDAO extends DAO<ServicesEtud> {
+public class FiliereDAO extends DAO<Filiere> {
 
-	public ServicesEtudDAO(Connection conn) {
+	public FiliereDAO(Connection conn) {
 		super(conn);
 	}
 
 	@Override
-	public Set<ServicesEtud> all() {
-		Set<ServicesEtud> set_ServicesEtud = new HashSet<>();
+	public Set<Filiere> all() {
+		Set<Filiere> set_Filiere = new HashSet<>();
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud");
+			ResultSet result = stmt.executeQuery("SELECT * FROM Filiere");
 			while (result.next()) {
-				set_ServicesEtud.add(
-						new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3), result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+				set_Filiere.add(new Filiere(result.getInt(1), result.getInt(2), result.getString(3)));
 			}
 			result.close();
 		} catch (SQLException e) {
@@ -37,15 +36,15 @@ public class ServicesEtudDAO extends DAO<ServicesEtud> {
 			}
 		}
 
-		return set_ServicesEtud;
+		return set_Filiere;
 	}
 
 	@Override
-	public boolean create(ServicesEtud obj) {
+	public boolean create(Filiere obj) {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("INSERT INTO ServicesEtud VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO Filiere VALUES(" + obj.toString() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {
@@ -61,12 +60,11 @@ public class ServicesEtudDAO extends DAO<ServicesEtud> {
 	}
 
 	@Override
-	public boolean delete(ServicesEtud obj) {
+	public boolean delete(Filiere obj) {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("DELETE FROM ServicesEtud WHERE EtudId  = " + obj.getEtudId()
-					+ " and EtudANS = '" + obj.getEtudANSC() + "'");
+			int result = stmt.executeUpdate("DELETE FROM Filiere WHERE CodeEtab = " + obj.getCodeEtab()+ " and CodeFil  = " + obj.getCodeFil()+ "");
 			System.out.println(result + " Row affected !");
 			return (true);
 		} catch (SQLException e) {
@@ -82,7 +80,7 @@ public class ServicesEtudDAO extends DAO<ServicesEtud> {
 	}
 
 	@Override
-	public boolean update(ServicesEtud oldobj, ServicesEtud newobj) {
+	public boolean update(Filiere oldobj, Filiere newobj) {
 		try {
 			delete(oldobj);
 			create(newobj);
