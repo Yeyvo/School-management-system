@@ -11,6 +11,7 @@ import javafx.scene.control.CheckBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
 import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.dao.DAOFactory;
 
@@ -70,7 +71,8 @@ public class ModifEleveController implements Initializable {
 		}
 		
 		DAOFactory.getEtudiantDAO().update(elv, elv);
-		
+		Stage stage = (Stage) pereDeces.getScene().getWindow();
+		stage.close();
 	}
 	
 	public Etudiant getElv() {

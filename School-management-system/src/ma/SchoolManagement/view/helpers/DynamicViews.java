@@ -25,6 +25,12 @@ public class DynamicViews {
 
 		if (ressources.equals("eleves")) {
 			Main.getScenesloaders().put(SceneNames.STUDENT, loader);
+		} else 		if (ressources.equals("filiere")) {
+			Main.getScenesloaders().put(SceneNames.FILIERE, loader);
+		} else 		if (ressources.equals("etablissement")) {
+			Main.getScenesloaders().put(SceneNames.ETABLISSEMENT, loader);
+		} else 		if (ressources.equals("service")) {
+			Main.getScenesloaders().put(SceneNames.SERVICE, loader);
 		}
 
 //		System.out.println("dkznqkcnl");

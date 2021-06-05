@@ -9,12 +9,15 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
+import ma.SchoolManagement.Main;
 import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.dao.DAOFactory;
+import ma.SchoolManagement.view.SceneNames;
 
 public class AjoutEleveController implements Initializable {
 
@@ -95,40 +98,40 @@ public class AjoutEleveController implements Initializable {
 
 	@FXML
 	private Button ajoutEleve;
-	
-	boolean homme ;
-	boolean femme ;
-	String nom, prenom,etudNat, etudAd1,ville,codePostal,tudNat,tel,mail,etudSfam,RIB,CNE,dpt ,CNIP ,nomP,prenomP,CNIM , nomM ,prenomM ;
-	LocalDate etudNai, ddnPereLocal, dddPereLocal, ddnMereLocal , dddMereLocal;
 
+	boolean homme;
+	boolean femme;
+	String nom, prenom, etudNat, etudAd1, ville, codePostal, tudNat, tel, mail, etudSfam, RIB, CNE, dpt, CNIP, nomP,
+			prenomP, CNIM, nomM, prenomM;
+	LocalDate etudNai, ddnPereLocal, dddPereLocal, ddnMereLocal, dddMereLocal;
 
 	@FXML
 	private void add_eleve() throws IOException {
-		 nom = nomEleve.getText();
-		 prenom = prenomEleve.getText();
-		 homme = sexeHomme.isSelected();
-		 femme = sexeFemme.isSelected();
-		 etudNai = dateNaissanceEleve.getValue();
-		 etudAd1 = adresseEleve.getText();
-		 ville = villeEleve.getText();
-		 codePostal = codePostalEleve.getText();
-		 etudNat = nationnaliteEleve.getText();
-		 tel = telephoneEleve.getText();
-		 mail = mailEleve.getText();
-		 etudSfam = situationFamilialeEleve.getText();
-		 RIB = RIBEleve.getText();
-		 CNE = CNEEleve.getText();
-		 dpt = departementEleve.getText();
-		 CNIP = CNIPere.getText();
-		 nomP = nomPere.getText();
-		 prenomP = prenomPere.getText();
-		 ddnPereLocal = dateNaissancePere.getValue();
-		 dddPereLocal = dateDecesPere.getValue();
-		 CNIM = CNIMere.getText();
-		 nomM = nomMere.getText();
-		 prenomM = prenomMere.getText();
-		 ddnMereLocal = dateNaissancePere.getValue();
-		 dddMereLocal = dateDecesPere.getValue();
+		nom = nomEleve.getText();
+		prenom = prenomEleve.getText();
+		homme = sexeHomme.isSelected();
+		femme = sexeFemme.isSelected();
+		etudNai = dateNaissanceEleve.getValue();
+		etudAd1 = adresseEleve.getText();
+		ville = villeEleve.getText();
+		codePostal = codePostalEleve.getText();
+		etudNat = nationnaliteEleve.getText();
+		tel = telephoneEleve.getText();
+		mail = mailEleve.getText();
+		etudSfam = situationFamilialeEleve.getText();
+		RIB = RIBEleve.getText();
+		CNE = CNEEleve.getText();
+		dpt = departementEleve.getText();
+		CNIP = CNIPere.getText();
+		nomP = nomPere.getText();
+		prenomP = prenomPere.getText();
+		ddnPereLocal = dateNaissancePere.getValue();
+		dddPereLocal = dateDecesPere.getValue();
+		CNIM = CNIMere.getText();
+		nomM = nomMere.getText();
+		prenomM = prenomMere.getText();
+		ddnMereLocal = dateNaissancePere.getValue();
+		dddMereLocal = dateDecesPere.getValue();
 
 		Etudiant data = new Etudiant(0, CNE, nom, prenom, etudSfam, etudNat, etudNai, (homme ? "Male" : "Female"),
 				etudAd1, Integer.valueOf(codePostal), ville, dpt, tel, mail, RIB, CNIP, nomP, prenomP, ddnPereLocal,
@@ -136,7 +139,13 @@ public class AjoutEleveController implements Initializable {
 		if (!DAOFactory.getEtudiantDAO().create(data)) {
 			Alert alert = new Alert(AlertType.WARNING, "Ajout impossible");
 			alert.show();
+		} else {
+			((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
 		}
+		
+		Stage stage = (Stage) CNEEleve.getScene().getWindow();
+		stage.close();
+		
 	}
 
 	@Override

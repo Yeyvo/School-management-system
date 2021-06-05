@@ -7,6 +7,7 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
+import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Filiere;
 
 public class FiliereDAO extends DAO<Filiere> {
@@ -89,6 +90,31 @@ public class FiliereDAO extends DAO<Filiere> {
 			e.printStackTrace();
 		}
 		return false;
+	}
+
+	@Override
+	public Set<Filiere> find(String nom) {
+		Set<Filiere> setdata = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery(
+					"SELECT * FROM Filiere where DesFil = '" + nom + "'");
+			while (result.next()) {
+				setdata.add(new Filiere(result.getInt(1), result.getInt(2), result.getString(3)));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return setdata;
 	}
 
 }

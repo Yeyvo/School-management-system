@@ -93,4 +93,10 @@ public class InscriptionDAO extends DAO<Inscription> {
 		return false;
 	}
 
+	@Override
+	public Set<Inscription> find(String str) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

@@ -52,5 +52,8 @@ public abstract class DAO<T> {
 	 * @return Set<T>
 	 */
 	public abstract Set<T> all();
+	
+	
+	public abstract Set<T> find (String str);
 
 }

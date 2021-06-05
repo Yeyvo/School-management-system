@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="292.0" prefWidth="602.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.AjoutEtablissementController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="153.0" prefWidth="705.0" styleClass="back-light-gray">
+         <children>
+            <ImageView fitHeight="156.0" fitWidth="148.0" styleClass="back-transparent">
+               <image>
+                  <Image url="@../icons/student-color.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout Etablissement">
+                     <styleClass>
+                        <String fx:value="fn-48" />
+                        <String fx:value="fill-green" />
+                     </styleClass>
+                  </Text>
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </HBox>
+      <HBox alignment="CENTER" />
+      <HBox alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Designation" wrappingWidth="115.0">
+               <HBox.margin>
+                  <Insets left="7.0" top="5.0" />
+               </HBox.margin>
+            </Text>
+            <TextField fx:id="des">
+               <HBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudDPM" wrappingWidth="115.0">
+               <HBox.margin>
+                  <Insets left="7.0" top="5.0" />
+               </HBox.margin>
+            </Text>
+            <TextField fx:id="dpm">
+               <HBox.margin>
+                  <Insets left="5.0" top="5.0" />
+               </HBox.margin>
+            </TextField>
+         </children>
+      </HBox>
+      <Button mnemonicParsing="false" onAction="#add_eleve" prefHeight="51.0" prefWidth="610.0" text="Ajouter">
+         <styleClass>
+            <String fx:value="fn-24" />
+            <String fx:value="back-green" />
+            <String fx:value="flat" />
+         </styleClass>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

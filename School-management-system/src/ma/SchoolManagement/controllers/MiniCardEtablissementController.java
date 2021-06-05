@@ -12,20 +12,18 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ma.SchoolManagement.Main;
+import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.dao.DAOFactory;
 import ma.SchoolManagement.view.SceneNames;
 import ma.SchoolManagement.view.helpers.DynamicViews;
 
-public class MiniCardStudentController implements Initializable {
+public class MiniCardEtablissementController implements Initializable {
 	
 	@FXML
 	private Text nom;
-	@FXML
-	private Text prenom;
 	
-	
-	private Etudiant elv;
+	private Etablissement etab;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -38,9 +36,9 @@ public class MiniCardStudentController implements Initializable {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(
-					new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_eleve.fxml"));
+					new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_etablissement.fxml"));
 			Parent info = loader.load();
-			((ModifEleveController) loader.getController()).setElv(elv);
+			((ModifEtablissementController) loader.getController()).setEtablissement(etab);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
 			stage.show();
@@ -51,28 +49,28 @@ public class MiniCardStudentController implements Initializable {
 	
 	@FXML
 	private void detail(){
-		((ControllerEleve)Main.getScenesloaders().get(SceneNames.STUDENT).getController()).setBig(elv);
+		((ControllerEtablissement)Main.getScenesloaders().get(SceneNames.ETABLISSEMENT).getController()).setBig(etab);
 	}
 
 	
 	@FXML
 	private void delete() {
-		DAOFactory.getEtudiantDAO().delete(elv);
-		ControllerEleve cont  = ((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController());
+		DAOFactory.getEtablissementDAO().delete(etab);
+		ControllerEtablissement cont  = ((ControllerEtablissement) Main.getScenesloaders().get(SceneNames.ETABLISSEMENT).getController());
 		cont.search();
-		if(cont.getBigetud().getEtudId() == elv.getEtudId()) {
+		if(cont.getBigetud().getCodeEtab() == etab.getCodeEtab()) {
 			cont.removeBig();
 		}
 	}
 
-	public Etudiant getElv() {
-		return elv;
+	public Etablissement getElv() {
+		return etab;
 	}
 
-	public void setElv(Etudiant elv) {
-		this.elv = elv;
-		nom.setText(elv.getEtudNom());
-		prenom.setText(elv.getEtudPrenom());
+	public void setElv(Etablissement etab) {
+		this.etab = etab;
+		nom.setText(etab.getDesEtab());
+
 	}
 
 }

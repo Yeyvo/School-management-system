@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import ma.SchoolManagement.model.Etablissement;
+import ma.SchoolManagement.model.Etudiant;
 
 public class EtablissementDAO extends DAO<Etablissement> {
 
@@ -22,6 +23,30 @@ public class EtablissementDAO extends DAO<Etablissement> {
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 			ResultSet result = stmt.executeQuery("SELECT * FROM Etablissement");
+			while (result.next()) {
+				set_Etablissement.add(new Etablissement(result.getInt(1), result.getString(2), result.getString(3)));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return set_Etablissement;
+	}
+	
+	public Set<Etablissement> find(String nom) {
+		Set<Etablissement> set_Etablissement = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery(
+					"SELECT * FROM Etablissement where DesEtab = '" + nom + "'");
 			while (result.next()) {
 				set_Etablissement.add(new Etablissement(result.getInt(1), result.getString(2), result.getString(3)));
 			}

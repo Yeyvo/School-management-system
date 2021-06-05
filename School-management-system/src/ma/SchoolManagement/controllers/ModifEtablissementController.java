@@ -1,0 +1,70 @@
+package ma.SchoolManagement.controllers;
+
+import java.net.URL;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
+
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.DatePicker;
+import javafx.scene.control.TextField;
+import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import ma.SchoolManagement.model.Etablissement;
+import ma.SchoolManagement.model.Etudiant;
+import ma.SchoolManagement.model.dao.DAOFactory;
+
+public class ModifEtablissementController implements Initializable{
+
+	
+
+	@FXML
+	private Text fullname;
+	@FXML
+	private TextField destxt;
+	@FXML
+	private TextField dpmtxt;
+	
+
+	private Etablissement etab;
+	
+	@Override
+	public void initialize(URL arg0, ResourceBundle arg1) {	
+	}
+	
+	@FXML
+	private void vall() {
+		String designation = destxt.getText();
+		String dpm = dpmtxt.getText();
+
+		
+
+		etab.setDesEtab(designation);
+		etab.setEtudDPM(dpm);
+
+		
+
+		DAOFactory.getEtablissementDAO().update(etab, etab);
+		
+		
+		Stage stage = (Stage) dpmtxt.getScene().getWindow();
+		stage.close();
+		
+	}
+	
+	public Etablissement getEtablissement() {
+		return etab;
+	}
+
+	public void setEtablissement(Etablissement etab) {
+		this.etab = etab;
+		fullname.setText(etab.getDesEtab());
+	}
+
+	
+	
+	
+	
+}

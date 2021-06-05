@@ -28,34 +28,32 @@ public class DashboardController implements Initializable {
 
 	}
 
-//	@FXML
-//	private void show_dashboard(MouseEvent event) throws IOException {
-//		DynamicViews.loadBorderCenter(border_pane, "eleves");
-//	}
 
 	@FXML
-	private void show_listeService(MouseEvent event) throws IOException {
-		DynamicViews.loadBorderCenter(border_pane, "services-choix");
+	private void show_listeService() throws IOException   {
+		DynamicViews.loadBorderCenter(border_pane, "service");
 	}
 
 	@FXML
-	private void show_eleve(MouseEvent event) throws IOException {
+	private void show_eleve() throws IOException {
 		DynamicViews.loadBorderCenter(border_pane, "eleves");
 	}
 
 	@FXML
-	private void etablissement(MouseEvent event) throws IOException {
-		DynamicViews.loadBorderCenter(border_pane, "etablissement-choix");
+	private void etablissement() throws IOException {
+		DynamicViews.loadBorderCenter(border_pane, "etablissement");
 	}
 
 	@FXML
-	private void filieres(MouseEvent event) throws IOException {
-		DynamicViews.loadBorderCenter(border_pane, "filieres-choix");
+	private void filieres() throws IOException {
+		DynamicViews.loadBorderCenter(border_pane, "filiere");
+	}
+	@FXML
+	private void inscription() throws IOException {
+		DynamicViews.loadBorderCenter(border_pane, "inscription");
 	}
 
-	public void updatetoliste() throws IOException {
-		DynamicViews.loadBorderCenter(border_pane, "liste_services");
-	}
+
 
 	@FXML
 	private void toexcel() throws IOException {

@@ -61,15 +61,15 @@ public class BigCardStudentController implements Initializable {
 
 	@FXML
 	private void detail() {
-		((controllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).setBig(elv);
+		((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).setBig(elv);
 		
 	}
 	
 	@FXML
 	private void delete() {
 		DAOFactory.getEtudiantDAO().delete(elv);
-		((controllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
-		((controllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).removeBig();
+		((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
+		((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).removeBig();
 	}
 
 	@FXML

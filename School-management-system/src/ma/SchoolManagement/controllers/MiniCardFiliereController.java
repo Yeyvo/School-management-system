@@ -12,20 +12,19 @@ import javafx.scene.Scene;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ma.SchoolManagement.Main;
+import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Etudiant;
+import ma.SchoolManagement.model.Filiere;
 import ma.SchoolManagement.model.dao.DAOFactory;
 import ma.SchoolManagement.view.SceneNames;
 import ma.SchoolManagement.view.helpers.DynamicViews;
 
-public class MiniCardStudentController implements Initializable {
+public class MiniCardFiliereController implements Initializable {
 	
 	@FXML
 	private Text nom;
-	@FXML
-	private Text prenom;
 	
-	
-	private Etudiant elv;
+	private Filiere fil;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
@@ -38,9 +37,9 @@ public class MiniCardStudentController implements Initializable {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(
-					new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_eleve.fxml"));
+					new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_filiere.fxml"));
 			Parent info = loader.load();
-			((ModifEleveController) loader.getController()).setElv(elv);
+			((ModifFiliereController) loader.getController()).setElv(fil);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
 			stage.show();
@@ -51,28 +50,28 @@ public class MiniCardStudentController implements Initializable {
 	
 	@FXML
 	private void detail(){
-		((ControllerEleve)Main.getScenesloaders().get(SceneNames.STUDENT).getController()).setBig(elv);
+		((ControllerFiliere)Main.getScenesloaders().get(SceneNames.FILIERE).getController()).setBig(fil);
 	}
 
 	
 	@FXML
 	private void delete() {
-		DAOFactory.getEtudiantDAO().delete(elv);
-		ControllerEleve cont  = ((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController());
+		DAOFactory.getFiliereDAO().delete(fil);
+		ControllerFiliere cont  = ((ControllerFiliere) Main.getScenesloaders().get(SceneNames.FILIERE).getController());
 		cont.search();
-		if(cont.getBigetud().getEtudId() == elv.getEtudId()) {
+		if(cont.getBigetud().getCodeEtab() == fil.getCodeEtab() && cont.getBigetud().getCodeFil() == fil.getCodeFil()) {
 			cont.removeBig();
 		}
 	}
 
-	public Etudiant getElv() {
-		return elv;
+	public Filiere getElv() {
+		return fil;
 	}
 
-	public void setElv(Etudiant elv) {
-		this.elv = elv;
-		nom.setText(elv.getEtudNom());
-		prenom.setText(elv.getEtudPrenom());
+	public void setElv(Filiere etab) {
+		this.fil = etab;
+		nom.setText(etab.getDesFil());
+
 	}
 
 }

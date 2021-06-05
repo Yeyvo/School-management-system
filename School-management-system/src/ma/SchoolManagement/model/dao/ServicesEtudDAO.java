@@ -93,4 +93,10 @@ public class ServicesEtudDAO extends DAO<ServicesEtud> {
 		return false;
 	}
 
+	@Override
+	public Set<ServicesEtud> find(String str) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 }

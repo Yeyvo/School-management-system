@@ -12,13 +12,13 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<VBox prefHeight="657.0" prefWidth="880.0" styleClass="back-white" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.ControllerEleve">
+<VBox prefHeight="657.0" prefWidth="880.0" styleClass="back-white" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.ControllerService">
    <children>
       <HBox prefHeight="658.0" prefWidth="867.0">
          <children>
             <VBox prefHeight="635.0" prefWidth="342.0">
                <children>
-                  <Text fill="#757070" strokeType="OUTSIDE" strokeWidth="0.0" text="ELEVES" wrappingWidth="298.3125">
+                  <Text fill="#757070" strokeType="OUTSIDE" strokeWidth="0.0" text="SERVICE" wrappingWidth="298.3125">
                      <VBox.margin>
                         <Insets bottom="10.0" top="20.0" />
                      </VBox.margin>
@@ -87,7 +87,7 @@
             </VBox>
             <VBox prefHeight="635.0" prefWidth="547.0">
                <children>
-                  <Text fill="#757070" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-32" text="DETAILS ELEVE" wrappingWidth="287.875">
+                  <Text fill="#757070" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-32" text="DETAILS SERVICE" wrappingWidth="287.875">
                      <VBox.margin>
                         <Insets bottom="50.0" left="30.0" top="20.0" />
                      </VBox.margin>
