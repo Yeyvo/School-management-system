@@ -1,4 +1,4 @@
-package ma.SchoolManagement.model.dao;
+package ma.SchoolManagement.model.dao.sql;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -23,8 +23,8 @@ public class ServicesEtudDAO extends DAO<ServicesEtud> {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 			ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud");
 			while (result.next()) {
-				set_ServicesEtud.add(
-						new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3), result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+				set_ServicesEtud.add(new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3),
+						result.getBoolean(4), result.getBoolean(5), result.getString(6)));
 			}
 			result.close();
 		} catch (SQLException e) {
@@ -94,9 +94,28 @@ public class ServicesEtudDAO extends DAO<ServicesEtud> {
 	}
 
 	@Override
-	public Set<ServicesEtud> find(String str) {
-		// TODO Auto-generated method stub
-		return null;
+	public Set<ServicesEtud> find(String id) {
+		Set<ServicesEtud> setdata = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud where EtudId = " + id);
+			while (result.next()) {
+				setdata.add(new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3),
+						result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return setdata;
 	}
 
 }

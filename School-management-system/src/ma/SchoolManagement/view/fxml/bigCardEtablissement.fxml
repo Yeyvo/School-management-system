@@ -13,9 +13,9 @@
 
 <HBox alignment="CENTER" prefHeight="273.0" prefWidth="467.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardEtablissementController">
    <children>
-      <ImageView fitHeight="101.0" fitWidth="126.0">
+      <ImageView fitHeight="117.0" fitWidth="117.0">
          <image>
-            <Image url="@../icons/school.png" />
+            <Image url="@../icons/school-color.png" />
          </image>
       </ImageView>
       <VBox prefHeight="263.0" prefWidth="242.0">
@@ -60,6 +60,9 @@
                </children>
             </Pane>
          </children>
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin>
       </VBox>
       <VBox alignment="CENTER" prefHeight="263.0" prefWidth="75.0">
          <children>

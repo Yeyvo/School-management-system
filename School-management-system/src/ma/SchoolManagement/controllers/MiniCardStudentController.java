@@ -57,7 +57,7 @@ public class MiniCardStudentController implements Initializable {
 	
 	@FXML
 	private void delete() {
-		DAOFactory.getEtudiantDAO().delete(elv);
+		DAOFactory.getSQLDAOFactory().getEtudiantDAO().delete(elv);
 		ControllerEleve cont  = ((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController());
 		cont.search();
 		if(cont.getBigetud().getEtudId() == elv.getEtudId()) {

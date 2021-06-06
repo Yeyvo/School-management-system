@@ -10,7 +10,6 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
-import ma.SchoolManagement.controllers.DashboardController;
 import ma.SchoolManagement.view.SceneNames;
 
 public class Main extends Application {

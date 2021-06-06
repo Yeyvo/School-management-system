@@ -56,7 +56,7 @@ public class MiniCardFiliereController implements Initializable {
 	
 	@FXML
 	private void delete() {
-		DAOFactory.getFiliereDAO().delete(fil);
+		DAOFactory.getSQLDAOFactory().getFiliereDAO().delete(fil);
 		ControllerFiliere cont  = ((ControllerFiliere) Main.getScenesloaders().get(SceneNames.FILIERE).getController());
 		cont.search();
 		if(cont.getBigetud().getCodeEtab() == fil.getCodeEtab() && cont.getBigetud().getCodeFil() == fil.getCodeFil()) {

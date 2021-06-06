@@ -43,6 +43,7 @@
                         <Button mnemonicParsing="false" onAction="#search" prefHeight="49.0" prefWidth="36.0">
                            <styleClass>
                               <String fx:value="back-green" />
+                              <String fx:value="btn" />
                               <String fx:value="flat" />
                            </styleClass>
                            <graphic>
@@ -60,6 +61,7 @@
                         <Button fx:id="addBtn" mnemonicParsing="false" onMouseClicked="#show_add" prefHeight="44.0" prefWidth="165.0" text="Ajouter">
                            <styleClass>
                               <String fx:value="fn-24" />
+                              <String fx:value="btn" />
                               <String fx:value="back-green" />
                               <String fx:value="flat" />
                            </styleClass>
@@ -82,10 +84,10 @@
                   </ScrollPane>
                </children>
                <HBox.margin>
-                  <Insets left="12.0" />
+                  <Insets left="12.0" right="15.0" />
                </HBox.margin>
             </VBox>
-            <VBox prefHeight="635.0" prefWidth="547.0">
+            <VBox prefHeight="658.0" prefWidth="495.0">
                <children>
                   <Text fill="#757070" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-32" text="DETAILS SERVICE" wrappingWidth="287.875">
                      <VBox.margin>

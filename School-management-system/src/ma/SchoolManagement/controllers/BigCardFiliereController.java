@@ -62,7 +62,7 @@ public class BigCardFiliereController implements Initializable {
 	
 	@FXML
 	private void delete() {
-		DAOFactory.getFiliereDAO().delete(fil);
+		DAOFactory.getSQLDAOFactory().getFiliereDAO().delete(fil);
 		((ControllerFiliere) Main.getScenesloaders().get(SceneNames.FILIERE).getController()).search();
 		((ControllerFiliere) Main.getScenesloaders().get(SceneNames.FILIERE).getController()).removeBig();
 	}

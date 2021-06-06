@@ -27,7 +27,7 @@
   -fx-text-fill: #7f1c27;
   
   
-   -fx-skin: 'ma.gestioncov.views.btnmenuskinSkin';
+   -fx-skin: 'ma.SchoolManagement.view.btnmenuSkin';
   
 }
 .scrollpane {

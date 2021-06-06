@@ -1,4 +1,4 @@
-package ma.SchoolManagement.model.dao;
+package ma.SchoolManagement.model.dao.sql;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -7,7 +7,6 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
-import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Filiere;
 
 public class FiliereDAO extends DAO<Filiere> {
@@ -45,6 +44,7 @@ public class FiliereDAO extends DAO<Filiere> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			System.out.println("INSERT INTO Filiere VALUES(" + obj.toString() + ")");
 			int result = stmt.executeUpdate("INSERT INTO Filiere VALUES(" + obj.toString() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;

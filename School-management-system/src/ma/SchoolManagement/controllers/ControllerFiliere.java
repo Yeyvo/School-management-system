@@ -42,6 +42,7 @@ public class ControllerFiliere implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		fil = DAOFactory.getSQLDAOFactory().getFiliereDAO().all();
 		search();
 
 	}
@@ -76,9 +77,9 @@ public class ControllerFiliere implements Initializable {
 		vbscroll.getChildren().clear();
 		
 		if (searchbar.getText() != null && !searchbar.getText().equals("")) {
-			fil = DAOFactory.getFiliereDAO().find(searchbar.getText());
+			fil = DAOFactory.getSQLDAOFactory().getFiliereDAO().find(searchbar.getText());
 		} else if (searchbar.getText().equals("")) {
-			fil = DAOFactory.getFiliereDAO().all();
+			fil = DAOFactory.getSQLDAOFactory().getFiliereDAO().all();
 		}
 
 		for (Filiere etud : fil) {

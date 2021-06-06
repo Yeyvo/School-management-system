@@ -114,6 +114,7 @@
                   <String fx:value="fn-24" />
                   <String fx:value="back-green" />
                   <String fx:value="flat" />
+                  <String fx:value="btn" />
                </styleClass>
                <VBox.margin>
                   <Insets top="15.0" />

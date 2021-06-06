@@ -41,10 +41,6 @@
                            </opaqueInsets>
                         </TextField>
                         <Button mnemonicParsing="false" onAction="#search" prefHeight="49.0" prefWidth="36.0">
-                           <styleClass>
-                              <String fx:value="back-green" />
-                              <String fx:value="flat" />
-                           </styleClass>
                            <graphic>
                               <ImageView fitHeight="35.0" fitWidth="35.0">
                                  <image>
@@ -52,20 +48,26 @@
                                  </image>
                               </ImageView>
                            </graphic>
+                           <styleClass>
+                              <String fx:value="back-green" />
+                              <String fx:value="flat" />
+                              <String fx:value="btn" />
+                           </styleClass>
                         </Button>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="300.0">
                      <children>
                         <Button fx:id="addBtn" mnemonicParsing="false" onMouseClicked="#show_add" prefHeight="44.0" prefWidth="165.0" text="Ajouter">
-                           <styleClass>
-                              <String fx:value="fn-24" />
-                              <String fx:value="back-green" />
-                              <String fx:value="flat" />
-                           </styleClass>
                            <HBox.margin>
                               <Insets bottom="5.0" />
                            </HBox.margin>
+                           <styleClass>
+                              <String fx:value="fn-24" />
+                              <String fx:value="back-green" />
+                              <String fx:value="btn" />
+                              <String fx:value="flat" />
+                           </styleClass>
                         </Button>
                      </children>
                      <VBox.margin>
@@ -82,7 +84,7 @@
                   </ScrollPane>
                </children>
                <HBox.margin>
-                  <Insets left="12.0" />
+                  <Insets left="12.0" right="15.0" />
                </HBox.margin>
             </VBox>
             <VBox prefHeight="635.0" prefWidth="547.0">

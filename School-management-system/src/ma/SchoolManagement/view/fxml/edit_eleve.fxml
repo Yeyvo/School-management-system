@@ -63,6 +63,34 @@
                   </HBox>
                   <HBox alignment="CENTER">
                      <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="ville" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets left="7.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="ville">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="code postal" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets left="7.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="cps">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Téléphone" wrappingWidth="115.0">
                            <HBox.margin>
                               <Insets left="7.0" top="5.0" />

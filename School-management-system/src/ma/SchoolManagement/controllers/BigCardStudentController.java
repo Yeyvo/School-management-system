@@ -10,7 +10,6 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.input.MouseEvent;
-import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ma.SchoolManagement.Main;
@@ -67,7 +66,7 @@ public class BigCardStudentController implements Initializable {
 	
 	@FXML
 	private void delete() {
-		DAOFactory.getEtudiantDAO().delete(elv);
+		DAOFactory.getSQLDAOFactory().getEtudiantDAO().delete(elv);
 		((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
 		((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).removeBig();
 	}

@@ -44,7 +44,7 @@ public class BigCardEtablissementController implements Initializable {
 			loader.setLocation(
 					new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_etablissement.fxml"));
 			Parent info = loader.load();
-			((BigCardEtablissementController) loader.getController()).setEtablissement(etab);
+			((ModifEtablissementController) loader.getController()).setEtablissement(etab);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
 			stage.show();
@@ -61,7 +61,7 @@ public class BigCardEtablissementController implements Initializable {
 	
 	@FXML
 	private void delete() {
-		DAOFactory.getEtablissementDAO().delete(etab);
+		DAOFactory.getSQLDAOFactory().getEtablissementDAO().delete(etab);
 		((ControllerEtablissement) Main.getScenesloaders().get(SceneNames.ETABLISSEMENT).getController()).search();
 		((ControllerEtablissement) Main.getScenesloaders().get(SceneNames.ETABLISSEMENT).getController()).removeBig();
 	}

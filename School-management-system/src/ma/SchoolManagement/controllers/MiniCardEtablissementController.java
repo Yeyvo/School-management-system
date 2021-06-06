@@ -55,7 +55,7 @@ public class MiniCardEtablissementController implements Initializable {
 	
 	@FXML
 	private void delete() {
-		DAOFactory.getEtablissementDAO().delete(etab);
+		DAOFactory.getSQLDAOFactory().getEtablissementDAO().delete(etab);
 		ControllerEtablissement cont  = ((ControllerEtablissement) Main.getScenesloaders().get(SceneNames.ETABLISSEMENT).getController());
 		cont.search();
 		if(cont.getBigetud().getCodeEtab() == etab.getCodeEtab()) {

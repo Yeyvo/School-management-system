@@ -44,6 +44,7 @@
                            <styleClass>
                               <String fx:value="back-green" />
                               <String fx:value="flat" />
+                              <String fx:value="btn" />
                            </styleClass>
                            <graphic>
                               <ImageView fitHeight="35.0" fitWidth="35.0">
@@ -61,6 +62,7 @@
                            <styleClass>
                               <String fx:value="fn-24" />
                               <String fx:value="back-green" />
+                              <String fx:value="btn" />
                               <String fx:value="flat" />
                            </styleClass>
                            <HBox.margin>
@@ -82,17 +84,17 @@
                   </ScrollPane>
                </children>
                <HBox.margin>
-                  <Insets left="12.0" />
+                  <Insets left="12.0" right="15.0" />
                </HBox.margin>
             </VBox>
-            <VBox prefHeight="635.0" prefWidth="547.0">
+            <VBox prefHeight="658.0" prefWidth="519.0">
                <children>
                   <Text fill="#757070" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-32" text="DETAILS ELEVE" wrappingWidth="287.875">
                      <VBox.margin>
                         <Insets bottom="50.0" left="30.0" top="20.0" />
                      </VBox.margin>
                   </Text>
-                  <VBox fx:id="vboxBig" prefHeight="200.0" prefWidth="100.0" />
+                  <VBox fx:id="vboxBig" prefHeight="200.0" prefWidth="512.0" />
                </children>
             </VBox>
          </children>

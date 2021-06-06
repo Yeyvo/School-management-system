@@ -107,6 +107,7 @@ public class AjoutEleveController implements Initializable {
 
 	@FXML
 	private void add_eleve() throws IOException {
+
 		nom = nomEleve.getText();
 		prenom = prenomEleve.getText();
 		homme = sexeHomme.isSelected();
@@ -133,19 +134,29 @@ public class AjoutEleveController implements Initializable {
 		ddnMereLocal = dateNaissancePere.getValue();
 		dddMereLocal = dateDecesPere.getValue();
 
-		Etudiant data = new Etudiant(0, CNE, nom, prenom, etudSfam, etudNat, etudNai, (homme ? "Male" : "Female"),
-				etudAd1, Integer.valueOf(codePostal), ville, dpt, tel, mail, RIB, CNIP, nomP, prenomP, ddnPereLocal,
-				dddPereLocal, CNIM, nomM, prenomM, ddnMereLocal, dddMereLocal);
-		if (!DAOFactory.getEtudiantDAO().create(data)) {
-			Alert alert = new Alert(AlertType.WARNING, "Ajout impossible");
+		if (nom.isBlank() || prenom.isBlank() || dateNaissanceEleve.getValue() == null || etudAd1.isBlank()
+				|| ville.isBlank() || codePostal.isBlank() || etudNat.isBlank() || tel.isBlank() || mail.isBlank()
+				|| etudSfam.isBlank() || RIB.isBlank() || CNE.isBlank() || dpt.isBlank() || CNIP.isBlank()
+				|| nomP.isBlank() || prenomP.isBlank() || dateNaissancePere.getValue() == null || CNIM.isBlank()
+				|| nomM.isBlank() || prenomM.isBlank() || dateNaissanceMere.getValue() == null) {
+			Alert alert = new Alert(AlertType.WARNING, "Veuillez remplir correctement tout les champs obligatoires");
 			alert.show();
 		} else {
-			((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
+
+			Etudiant data = new Etudiant(0, CNE, nom, prenom, etudSfam, etudNat, etudNai, (homme ? "Male" : "Female"),
+					etudAd1, Integer.valueOf(codePostal), ville, dpt, tel, mail, RIB, CNIP, nomP, prenomP, ddnPereLocal,
+					dddPereLocal, CNIM, nomM, prenomM, ddnMereLocal, dddMereLocal);
+			if (!DAOFactory.getSQLDAOFactory().getEtudiantDAO().create(data)) {
+				Alert alert = new Alert(AlertType.WARNING, "Ajout impossible");
+				alert.show();
+			} else {
+				((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
+			}
+
+			Stage stage = (Stage) CNEEleve.getScene().getWindow();
+			stage.close();
+
 		}
-		
-		Stage stage = (Stage) CNEEleve.getScene().getWindow();
-		stage.close();
-		
 	}
 
 	@Override

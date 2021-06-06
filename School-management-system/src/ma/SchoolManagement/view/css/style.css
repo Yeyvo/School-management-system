@@ -132,3 +132,14 @@
 .desc {
   -fx-font-family: "Butler";
 }
+
+.menu-btn {
+   -fx-skin: 'ma.SchoolManagement.view.btnmenuSkin';
+}
+
+.btn:armed{
+	 -fx-background-color: #f48024
+}
+.btn:hover{
+	 -fx-background-color: #f48024
+}

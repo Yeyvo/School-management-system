@@ -1,11 +1,36 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane prefHeight="635.0" prefWidth="717.0" styleClass="fn-32" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.ChoixExcelController">
+<Pane prefHeight="635.0" prefWidth="940.0" styleClass="fn-32" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.ChoixExcelController">
    <children>
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="142.0" layoutY="283.0" mnemonicParsing="false" onAction="#imp"  styleClass="back-green" text="IMPORT" />
-      <Button alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="283.0" mnemonicParsing="false" onAction="#exp"  styleClass="back-green" text="EXPORT" />
+      <Button alignment="CENTER" layoutX="160.0" layoutY="262.0" mnemonicParsing="false" onAction="#imp" prefHeight="112.0" prefWidth="275.0" text="IMPORT">
+         <styleClass>
+            <String fx:value="back-green" />
+            <String fx:value="btn" />
+         </styleClass>
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../icons/import.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
+      <Button alignment="CENTER" layoutX="505.0" layoutY="262.0" mnemonicParsing="false" onAction="#exp" prefHeight="112.0" prefWidth="275.0" text="EXPORT">
+         <styleClass>
+            <String fx:value="back-green" />
+            <String fx:value="btn" />
+         </styleClass>
+         <graphic>
+            <ImageView>
+               <image>
+                  <Image url="@../icons/export.png" />
+               </image>
+            </ImageView>
+         </graphic></Button>
    </children>
 </Pane>

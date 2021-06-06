@@ -25,12 +25,14 @@ public class DynamicViews {
 
 		if (ressources.equals("eleves")) {
 			Main.getScenesloaders().put(SceneNames.STUDENT, loader);
-		} else 		if (ressources.equals("filiere")) {
+		} else 	if (ressources.equals("filiere")) {
 			Main.getScenesloaders().put(SceneNames.FILIERE, loader);
-		} else 		if (ressources.equals("etablissement")) {
+		} else 	if (ressources.equals("etablissement")) {
 			Main.getScenesloaders().put(SceneNames.ETABLISSEMENT, loader);
-		} else 		if (ressources.equals("service")) {
+		} else 	if (ressources.equals("service")) {
 			Main.getScenesloaders().put(SceneNames.SERVICE, loader);
+		} else 	if (ressources.equals("inscription")) {
+			Main.getScenesloaders().put(SceneNames.INSCRIPTION, loader);
 		}
 
 //		System.out.println("dkznqkcnl");

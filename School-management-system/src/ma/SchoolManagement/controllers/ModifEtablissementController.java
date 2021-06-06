@@ -16,9 +16,7 @@ import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.dao.DAOFactory;
 
-public class ModifEtablissementController implements Initializable{
-
-	
+public class ModifEtablissementController implements Initializable {
 
 	@FXML
 	private Text fullname;
@@ -26,34 +24,31 @@ public class ModifEtablissementController implements Initializable{
 	private TextField destxt;
 	@FXML
 	private TextField dpmtxt;
-	
 
 	private Etablissement etab;
-	
+
 	@Override
-	public void initialize(URL arg0, ResourceBundle arg1) {	
+	public void initialize(URL arg0, ResourceBundle arg1) {
 	}
-	
+
 	@FXML
 	private void vall() {
 		String designation = destxt.getText();
 		String dpm = dpmtxt.getText();
 
-		
+		if (!designation.isBlank())
+			etab.setDesEtab(designation);
 
-		etab.setDesEtab(designation);
-		etab.setEtudDPM(dpm);
+		if (!dpm.isBlank())
+			etab.setEtudDPM(dpm);
 
-		
+		DAOFactory.getSQLDAOFactory().getEtablissementDAO().update(etab, etab);
 
-		DAOFactory.getEtablissementDAO().update(etab, etab);
-		
-		
 		Stage stage = (Stage) dpmtxt.getScene().getWindow();
 		stage.close();
-		
+
 	}
-	
+
 	public Etablissement getEtablissement() {
 		return etab;
 	}
@@ -63,8 +58,4 @@ public class ModifEtablissementController implements Initializable{
 		fullname.setText(etab.getDesEtab());
 	}
 
-	
-	
-	
-	
 }

@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<VBox prefHeight="416.0" prefWidth="526.0" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.AjoutServiceController">
+   <children>
+      <HBox alignment="CENTER_LEFT" prefHeight="127.0" prefWidth="655.0" styleClass="back-light-gray">
+         <children>
+            <ImageView fitHeight="136.0" fitWidth="129.0" styleClass="back-transparent">
+               <image>
+                  <Image url="@../icons/student-color.png" />
+               </image>
+            </ImageView>
+            <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Ajout Couverture sociale">
+                     <styleClass>
+                        <String fx:value="fn-48" />
+                        <String fx:value="fill-green" />
+                     </styleClass>
+                  </Text>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-24" text="Nom + Prenom " />
+               </children>
+            </VBox>
+         </children>
+         <padding>
+            <Insets bottom="10.0" />
+         </padding>
+      </HBox>
+      <HBox>
+         <children>
+            <VBox alignment="CENTER" HBox.hgrow="ALWAYS">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets bottom="5.0" left="7.0" top="5.0" />
+               </padding>
+               <children>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Id Etudiant" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets left="7.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="idEtudiant">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Année scolaire" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets left="7.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <TextField fx:id="EtudANSC">
+                           <HBox.margin>
+                              <Insets left="5.0" top="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Boursier" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets left="7.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <RadioButton fx:id="ouiBourse" mnemonicParsing="false" text="OUI">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="bourse" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="nonBourse" mnemonicParsing="false" selected="true" text="NON" toggleGroup="$bourse">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                           <padding>
+                              <Insets bottom="10.0" />
+                           </padding>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </HBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Cité Universitaire" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets left="7.0" top="5.0" />
+                           </HBox.margin>
+                        </Text>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <RadioButton fx:id="ouiCiteUniv" mnemonicParsing="false" text="OUI">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="cite" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="nonCiteUniv" mnemonicParsing="false" selected="true" text="NON" toggleGroup="$cite">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </HBox>
+                  <VBox>
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Couverture Medicale" wrappingWidth="648.0">
+                           <styleClass>
+                              <String fx:value="fn-14" />
+                              <String fx:value="txt-center" />
+                           </styleClass>
+                           <VBox.margin>
+                              <Insets bottom="7.0" />
+                           </VBox.margin>
+                        </Text>
+                        <HBox alignment="CENTER">
+                           <children>
+                              <RadioButton fx:id="ouiCouvMed" mnemonicParsing="false" text="OUI">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                                 <toggleGroup>
+                                    <ToggleGroup fx:id="couvmed" />
+                                 </toggleGroup>
+                              </RadioButton>
+                              <RadioButton fx:id="nonCouvMed" mnemonicParsing="false" selected="true" text="NON" toggleGroup="$couvmed">
+                                 <HBox.margin>
+                                    <Insets left="10.0" right="10.0" />
+                                 </HBox.margin>
+                              </RadioButton>
+                           </children>
+                           <VBox.margin>
+                              <Insets bottom="7.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                     <padding>
+                        <Insets bottom="10.0" />
+                     </padding>
+                  </VBox>
+                  <HBox alignment="CENTER">
+                     <children>
+                        <TextField fx:id="couvMed" />
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+      <VBox />
+      <Button fx:id="modifCouvSoc" mnemonicParsing="false" onAction="#add_couvSocial" prefHeight="51.0" prefWidth="725.0" text="Ajouter">
+         <styleClass>
+            <String fx:value="fn-24" />
+            <String fx:value="back-green" />
+            <String fx:value="flat" />
+         </styleClass>
+         <VBox.margin>
+            <Insets top="15.0" />
+         </VBox.margin>
+      </Button>
+   </children>
+</VBox>

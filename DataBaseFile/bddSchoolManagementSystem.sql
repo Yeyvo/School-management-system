@@ -36,14 +36,14 @@ CREATE TABLE Etudiant(
 	Etudprem varchar(255),
 	EtudDNM DATE,
 	EtudDDM DATE
-	)ENGINE=INNODB;;
+	)ENGINE=INNODB;
 
 
 CREATE TABLE Etablissement(
 	CodeEtab INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
 	DesEtab varchar(255),
 	EtudDPM varchar(255)
-	)ENGINE=INNODB;;
+	)ENGINE=INNODB;
 
 
 
@@ -53,7 +53,7 @@ CREATE TABLE Filiere(
 	DesFil varchar(255),
 	PRIMARY KEY (CodeEtab, CodeFil),
 	FOREIGN KEY (CodeEtab) REFERENCES Etablissement(CodeEtab)
-	)ENGINE=INNODB;;
+	)ENGINE=INNODB;
 
 
 
@@ -66,7 +66,7 @@ CREATE TABLE Inscription(
 	FOREIGN KEY (EtudId) REFERENCES Etudiant(EtudId),
 	FOREIGN KEY (EtudEtab) REFERENCES Etablissement(CodeEtab),
 	FOREIGN KEY (EtudEtab,EtudFil) REFERENCES Filiere(CodeEtab,CodeFil)
-	)ENGINE=INNODB;;
+	)ENGINE=INNODB;
 
 
 
@@ -79,4 +79,4 @@ CREATE TABLE ServicesEtud(
 	EtudCMBO varchar(255),
 	PRIMARY KEY (EtudId, EtudANS),
 	FOREIGN KEY (EtudId) REFERENCES Etudiant(EtudId)
-	)ENGINE=INNODB;;
+	)ENGINE=INNODB;

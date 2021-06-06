@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="minicard" alignment="CENTER" onMouseClicked="#detail" prefHeight="100.0" prefWidth="297.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.MiniCardInscriptionController">
+   <children>
+      <ImageView fitHeight="89.0" fitWidth="88.0" styleClass="back-transparent">
+         <image>
+            <Image url="@../icons/calendar.png" />
+         </image>
+         <HBox.margin>
+            <Insets left="5.0" right="5.0" />
+         </HBox.margin>
+      </ImageView>
+      <VBox prefHeight="100.0" prefWidth="135.0">
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets bottom="5.0" top="5.0" />
+         </padding>
+         <children>
+            <HBox>
+               <VBox.margin>
+                  <Insets left="7.0" top="20.0" />
+               </VBox.margin>
+               <children>
+                  <Text fx:id="id" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" />
+               </children>
+            </HBox>
+            <HBox>
+               <VBox.margin>
+                  <Insets left="7.0" top="7.0" />
+               </VBox.margin>
+               <children>
+                  <Text fx:id="ans" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="90.0" prefWidth="64.0" HBox.hgrow="ALWAYS">
+         <children>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#delete" text="DELETE">
+               <styleClass>
+                  <String fx:value="fn-14" />
+                  <String fx:value="back-transparent" />
+                  <String fx:value="fill-red" />
+               </styleClass>
+            </Button>
+            <Button alignment="CENTER" mnemonicParsing="false" onAction="#show_edit" text="EDIT">
+               <styleClass>
+                  <String fx:value="fn-14" />
+                  <String fx:value="back-transparent" />
+                  <String fx:value="fill-green" />
+               </styleClass>
+            </Button>
+         </children>
+      </VBox>
+   </children>
+</HBox>

@@ -9,17 +9,17 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="minicard" alignment="CENTER" onMouseClicked="#detail" prefHeight="100.0" prefWidth="285.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.MiniCardEtablissementController">
+<HBox fx:id="minicard" alignment="CENTER" onMouseClicked="#detail" prefHeight="100.0" prefWidth="322.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.MiniCardEtablissementController">
    <children>
-      <ImageView fitHeight="54.0" fitWidth="63.0">
+      <ImageView>
          <image>
-            <Image url="@../icons/school.png" />
+            <Image url="@../icons/school-color.png" />
          </image>
-         <HBox.margin>
-            <Insets left="20.0" right="10.0" />
-         </HBox.margin>
       </ImageView>
-      <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" />
+      <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" wrappingWidth="116.6875">
+         <HBox.margin>
+            <Insets left="15.0" />
+         </HBox.margin></Text>
       <VBox alignment="CENTER" prefHeight="90.0" prefWidth="64.0" HBox.hgrow="ALWAYS">
          <children>
             <Button alignment="CENTER" mnemonicParsing="false" onAction="#delete" text="DELETE">

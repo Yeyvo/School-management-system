@@ -42,6 +42,7 @@ public class ControllerEtablissement implements Initializable {
 	
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		data = DAOFactory.getSQLDAOFactory().getEtablissementDAO().all();
 		search();
 
 	}
@@ -76,9 +77,9 @@ public class ControllerEtablissement implements Initializable {
 		vbscroll.getChildren().clear();
 		
 		if (searchbar.getText() != null && !searchbar.getText().equals("")) {
-			data = DAOFactory.getEtablissementDAO().find(searchbar.getText());
+			data = DAOFactory.getSQLDAOFactory().getEtablissementDAO().find(searchbar.getText());
 		} else if (searchbar.getText().equals("")) {
-			data = DAOFactory.getEtablissementDAO().all();
+			data = DAOFactory.getSQLDAOFactory().getEtablissementDAO().all();
 		}
 
 		for (Etablissement etud : data) {
