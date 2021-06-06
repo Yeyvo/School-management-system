@@ -26,8 +26,6 @@ public class Main extends Application {
     	
 		primary = primaryStage;
 		scenes.put(SceneNames.DASHBOARD, returnSceneDashboard());
-		//scenes.put(SceneNames.LOGING, returnSceneloging());
-		
 
         primaryStage.setScene(scenes.get(SceneNames.DASHBOARD));
         
@@ -51,19 +49,6 @@ public class Main extends Application {
 		}
 	}
 
-	public Scene returnSceneloging() {
-		try {
-			FXMLLoader loader = new FXMLLoader();
-			loader.setLocation(getClass().getResource("views/loging.fxml"));
-			Parent root = loader.load();
-			scenesloaders.put(SceneNames.LOGING, loader);
-			Scene scene = new Scene(root);
-			return (scene);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return (null);
-		}
-	}
 
     public static void main(String[] args) {
         launch(args);

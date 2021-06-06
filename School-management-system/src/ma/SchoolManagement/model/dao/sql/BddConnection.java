@@ -5,14 +5,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.logging.Logger;
 
-import ma.SchoolManagement.config.Config;
-
 public class BddConnection {
 
-	private static String url = "jdbc:" + Config.getInstance().BDD + "://" + Config.getInstance().IP + ":"
-			+ Config.getInstance().PRT + "/" + Config.getInstance().BDDNAME;
-	private static String user = Config.getInstance().USR;
-	private static String passwd = Config.getInstance().PSWD;
+	private static String url = "jdbc:mysql://127.0.0.1:3306/SchoolManagementSystem";
+	private static String user = "root";
+	private static String passwd = "";
 	private static Connection connect;
 
 	public static Connection getInstance() {

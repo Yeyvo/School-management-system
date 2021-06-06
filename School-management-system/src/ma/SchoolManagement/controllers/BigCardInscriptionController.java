@@ -52,7 +52,7 @@ public class BigCardInscriptionController implements Initializable {
 		try {
 			FXMLLoader loader = new FXMLLoader();
 			loader.setLocation(
-					new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_eleve.fxml"));
+					new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_inscription.fxml"));
 			Parent info = loader.load();
 			((ModifInscripionController) loader.getController()).setInsc(elv);
 			Stage stage = new Stage();
