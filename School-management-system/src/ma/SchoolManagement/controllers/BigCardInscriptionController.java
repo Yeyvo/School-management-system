@@ -10,11 +10,14 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ma.SchoolManagement.Main;
+import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Etudiant;
+import ma.SchoolManagement.model.Filiere;
 import ma.SchoolManagement.model.Inscription;
 import ma.SchoolManagement.model.dao.DAOFactory;
 import ma.SchoolManagement.view.SceneNames;
@@ -32,6 +35,10 @@ public class BigCardInscriptionController implements Initializable {
 	private Text EtudFil;
 	@FXML
 	private Text EtudInsc;
+	@FXML
+	private Text nomEtab;
+	@FXML
+	private Text nonfil;
 
 	private Inscription elv;
 
@@ -50,6 +57,9 @@ public class BigCardInscriptionController implements Initializable {
 			((ModifInscripionController) loader.getController()).setInsc(elv);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
+			stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+			stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -76,7 +86,16 @@ public class BigCardInscriptionController implements Initializable {
 
 	public void setElv(Inscription elv) {
 		this.elv = elv;
-		//nomprenom.setText(elv.getEtudNom() + " " + elv.getEtudPrenom());
+		
+		Etudiant e = DAOFactory.getSQLDAOFactory().getEtudiantDAO().findid(String.valueOf(elv.getEtudId()));
+		nomprenom.setText(e.getEtudNom() + " " + e.getEtudPrenom());
+		
+		Etablissement etab = DAOFactory.getSQLDAOFactory().getEtablissementDAO().findid(String.valueOf(elv.getEtudEtab()));
+		nomEtab.setText(etab.getDesEtab());
+
+		Filiere fil = DAOFactory.getSQLDAOFactory().getFiliereDAO().findid(elv.getEtudFil(), etab.getCodeEtab());
+		nonfil.setText(fil.getDesFil());
+		
 		EtudId.setText(String.valueOf(elv.getEtudId()));
 		EtudEtab.setText(String.valueOf(elv.getEtudEtab()));
 		EtudFil.setText(String.valueOf(elv.getEtudFil()));

@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<HBox alignment="CENTER" prefHeight="213.0" prefWidth="467.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardServicesController">
+<HBox alignment="CENTER" prefHeight="249.0" prefWidth="467.0" style="-fx-background-radius: 30;" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardServicesController">
    <children>
       <ImageView fitHeight="90.0" fitWidth="90.0">
          <image>
@@ -32,10 +32,10 @@
          <children>
             <Pane prefHeight="221.0" prefWidth="242.0">
                <children>
-                  <Text fx:id="id" layoutX="40.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-18" text="NOM" wrappingWidth="78.1982421875" />
-                  <HBox layoutX="3.0" layoutY="66.0">
+                  <Text fx:id="nom" layoutX="2.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-18" text="NOM" wrappingWidth="248.1982421875" />
+                  <HBox layoutY="73.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudANSC" wrappingWidth="115.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Année Scolaire" wrappingWidth="115.0">
                            <HBox.margin>
                               <Insets bottom="3.0" top="2.0" />
                            </HBox.margin>
@@ -47,7 +47,7 @@
                         </Text>
                      </children>
                   </HBox>
-                  <HBox fx:id="boxCMBO" layoutX="4.0" layoutY="165.0">
+                  <HBox fx:id="boxCMBO" layoutX="2.0" layoutY="195.0">
                      <children>
                         <Text fx:id="EtudCMBO" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudCMBO" wrappingWidth="116.0">
                            <HBox.margin>
@@ -61,9 +61,9 @@
                         </Text>
                      </children>
                   </HBox>
-                  <HBox layoutX="4.0" layoutY="91.0">
+                  <HBox layoutY="98.0" prefHeight="25.0" prefWidth="237.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudBO" wrappingWidth="115.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Bourse" wrappingWidth="115.0">
                            <HBox.margin>
                               <Insets bottom="3.0" top="2.0" />
                            </HBox.margin>
@@ -71,24 +71,44 @@
                         <CheckBox fx:id="EtudBO" disable="true" mnemonicParsing="false" />
                      </children>
                   </HBox>
-                  <HBox layoutX="4.0" layoutY="116.0">
+                  <HBox layoutY="125.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudCU" wrappingWidth="115.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Cité Universitaire" wrappingWidth="115.0">
                            <HBox.margin>
                               <Insets bottom="3.0" top="2.0" />
                            </HBox.margin>
                         </Text>
-                        <CheckBox fx:id="EtudCU" disable="true" mnemonicParsing="false" />
+                        <CheckBox fx:id="EtudCU" disable="true" mnemonicParsing="false" prefHeight="17.0" prefWidth="113.0">
+                           <HBox.margin>
+                              <Insets top="5.0" />
+                           </HBox.margin></CheckBox>
                      </children>
                   </HBox>
-                  <HBox layoutX="4.0" layoutY="141.0" prefHeight="24.0" prefWidth="237.0">
+                  <HBox layoutY="150.0" prefHeight="24.0" prefWidth="237.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudCMB" wrappingWidth="115.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Couverture Medicale" wrappingWidth="115.0">
                            <HBox.margin>
                               <Insets bottom="3.0" top="2.0" />
                            </HBox.margin>
                         </Text>
-                        <CheckBox fx:id="EtudCMB" disable="true" mnemonicParsing="false" />
+                        <CheckBox fx:id="EtudCMB" disable="true" mnemonicParsing="false">
+                           <HBox.margin>
+                              <Insets top="15.0" />
+                           </HBox.margin></CheckBox>
+                     </children>
+                  </HBox>
+                  <HBox layoutY="48.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="id Service" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets bottom="3.0" top="2.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="id" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                           <HBox.margin>
+                              <Insets bottom="3.0" top="2.0" />
+                           </HBox.margin>
+                        </Text>
                      </children>
                   </HBox>
                </children>

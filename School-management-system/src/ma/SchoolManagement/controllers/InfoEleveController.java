@@ -114,12 +114,12 @@ public class InfoEleveController implements Initializable {
 		prenomPereText.setText(elv.getEtudPrenom());
 		dateNaissancePereText.setText(elv.getEtudDNP().toString());
 		
-		dateDecesPereText.setText(elv.getEtudDDP().toString());
+		dateDecesPereText.setText(elv.getEtudDDP() == null? "" : elv.getEtudDDP().toString());
 		CNIMereText.setText(elv.getCnieMere());
 		nomMereText.setText(elv.getEtudNomm());
 		prenomMereText.setText(elv.getEtudprem());
 		dateNaissanceMereText.setText(elv.getEtudDNM().toString());
-		dateDecesMereText.setText(elv.getEtudDDM().toString());
+		dateDecesMereText.setText(elv.getEtudDDM() == null? "" : elv.getEtudDDM().toString());
 		CNEEleveText.setText(elv.getEtudCNE());
 		departementEleveText.setText(elv.getEtudDpt());
 		

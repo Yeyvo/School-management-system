@@ -13,6 +13,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ma.SchoolManagement.model.Etablissement;
+import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.ServicesEtud;
 import ma.SchoolManagement.model.dao.DAOFactory;
 
@@ -78,7 +79,8 @@ public class ModifServicesController implements Initializable {
 
 	public void setSrv(ServicesEtud srv) {
 		this.srv = srv;
-		fullname.setText(String.valueOf(srv.getEtudId()));
+		Etudiant etud = DAOFactory.getSQLDAOFactory().getEtudiantDAO().findid(String.valueOf(srv.getEtudId()));
+		fullname.setText(etud.getEtudNom() + " " + etud.getEtudPrenom());
 	}
 
 }

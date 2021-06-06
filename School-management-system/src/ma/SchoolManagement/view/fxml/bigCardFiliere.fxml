@@ -11,12 +11,15 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<HBox alignment="CENTER" prefHeight="273.0" prefWidth="467.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardFiliereController">
+<HBox alignment="CENTER" prefHeight="172.0" prefWidth="467.0" style="-fx-background-radius: 30;" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardFiliereController">
    <children>
       <ImageView fitHeight="95.0" fitWidth="95.0">
          <image>
             <Image url="@../icons/filiere.png" />
          </image>
+         <HBox.margin>
+            <Insets right="15.0" />
+         </HBox.margin>
       </ImageView>
       <VBox prefHeight="263.0" prefWidth="242.0">
          <opaqueInsets>
@@ -28,21 +31,7 @@
          <children>
             <Pane prefHeight="221.0" prefWidth="242.0">
                <children>
-                  <HBox layoutX="3.0" layoutY="66.0">
-                     <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="CodeEtab" wrappingWidth="115.0">
-                           <HBox.margin>
-                              <Insets bottom="3.0" top="2.0" />
-                           </HBox.margin>
-                        </Text>
-                        <Text fx:id="CodeEtab" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
-                           <HBox.margin>
-                              <Insets bottom="3.0" top="2.0" />
-                           </HBox.margin>
-                        </Text>
-                     </children>
-                  </HBox>
-                  <HBox layoutY="111.0">
+                  <HBox layoutX="-6.0" layoutY="111.0">
                      <children>
                         <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="CodeFil" wrappingWidth="116.0">
                            <HBox.margin>
@@ -56,7 +45,35 @@
                         </Text>
                      </children>
                   </HBox>
-                  <Text fx:id="DesFil" layoutX="40.0" layoutY="34.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-18" text="NOM" wrappingWidth="78.1982421875" />
+                  <Text fx:id="DesFil" layoutX="4.0" layoutY="30.0" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-18" text="NOM" wrappingWidth="230.1982421875" />
+                  <HBox layoutX="-6.0" layoutY="86.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="CodeEtab" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets bottom="3.0" top="2.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="CodeEtab" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                           <HBox.margin>
+                              <Insets bottom="3.0" top="2.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
+                  <HBox layoutX="-5.0" layoutY="44.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Designation etablissement" wrappingWidth="115.0">
+                           <HBox.margin>
+                              <Insets bottom="3.0" top="2.0" />
+                           </HBox.margin>
+                        </Text>
+                        <Text fx:id="desEtab" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                           <HBox.margin>
+                              <Insets bottom="3.0" top="12.0" />
+                           </HBox.margin>
+                        </Text>
+                     </children>
+                  </HBox>
                </children>
             </Pane>
          </children>

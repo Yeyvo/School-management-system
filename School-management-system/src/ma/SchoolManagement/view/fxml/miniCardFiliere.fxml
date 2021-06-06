@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<HBox fx:id="minicard" alignment="CENTER" onMouseClicked="#detail" prefHeight="100.0" prefWidth="285.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.MiniCardFiliereController">
+<HBox fx:id="minicard" alignment="CENTER" onMouseClicked="#detail" prefHeight="100.0" prefWidth="333.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.MiniCardFiliereController">
    <children>
       <ImageView fitHeight="54.0" fitWidth="63.0">
          <image>
@@ -19,8 +19,20 @@
             <Insets left="20.0" right="10.0" />
          </HBox.margin>
       </ImageView>
-      <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" />
-      <VBox alignment="CENTER" prefHeight="90.0" prefWidth="64.0" HBox.hgrow="ALWAYS">
+      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="132.0">
+         <children>
+            <Text fx:id="ecole" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" wrappingWidth="135.6875" />
+            <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" wrappingWidth="136.6875">
+               <VBox.margin>
+                  <Insets top="10.0" />
+               </VBox.margin>
+            </Text>
+         </children>
+         <HBox.margin>
+            <Insets left="10.0" />
+         </HBox.margin>
+      </VBox>
+      <VBox alignment="CENTER" prefHeight="100.0" prefWidth="0.0" HBox.hgrow="ALWAYS">
          <children>
             <Button alignment="CENTER" mnemonicParsing="false" onAction="#delete" text="DELETE">
                <styleClass>

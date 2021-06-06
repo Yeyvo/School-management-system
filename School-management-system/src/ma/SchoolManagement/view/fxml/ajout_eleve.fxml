@@ -3,6 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.TextField?>
@@ -158,16 +159,16 @@
                   </HBox>
                   <HBox layoutX="10.0" layoutY="370.0">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Nationalité*" wrappingWidth="115.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Nationalité*" wrappingWidth="120.0">
                            <HBox.margin>
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="nationnaliteEleve">
+                        <ChoiceBox fx:id="nationnaliteEleve" prefWidth="150.0">
                            <HBox.margin>
-                              <Insets left="5.0" top="5.0" />
+                              <Insets bottom="5.0" top="5.0" />
                            </HBox.margin>
-                        </TextField>
+                        </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox>
@@ -205,11 +206,11 @@
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="situationFamilialeEleve">
+                        <ChoiceBox fx:id="situationFamilialeEleve" prefWidth="150.0">
                            <HBox.margin>
-                              <Insets left="5.0" top="5.0" />
+                              <Insets bottom="5.0" left="5.0" top="5.0" />
                            </HBox.margin>
-                        </TextField>
+                        </ChoiceBox>
                      </children>
                   </HBox>
                   <HBox>

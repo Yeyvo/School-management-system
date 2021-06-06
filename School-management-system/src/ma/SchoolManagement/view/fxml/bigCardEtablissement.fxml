@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<HBox alignment="CENTER" prefHeight="273.0" prefWidth="467.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardEtablissementController">
+<HBox alignment="CENTER" prefHeight="273.0" prefWidth="467.0" style="-fx-background-radius: 30;" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardEtablissementController">
    <children>
       <ImageView fitHeight="117.0" fitWidth="117.0">
          <image>

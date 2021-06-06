@@ -246,31 +246,32 @@ public class Etudiant {
 
 	@Override
 	public String toString() {
-		return /* nullcheck(EtudId) +",'"*/   nullcheck(EtudCNE) + "," + nullcheck(EtudNom) + ","
-				+ nullcheck(EtudPre) + "," + nullcheck(EtudSfam) + "," + nullcheck(EtudNat) + ","
-				+ nullcheck(EtudNai) + "," + nullcheck(EtudSexe) + "," + nullcheck(EtudAd1) + ","
-				+ nullcheck(EtudCPS) + "," + nullcheck(EtudVil) + "," + nullcheck(EtudDpt) + ","
-				+ nullcheck(EtudTel) + "," + nullcheck(EtudMail) + "," + nullcheck(EtudRib) + ","
-				+ nullcheck(CniePere) + "," + nullcheck(EtudNomp) + "," + nullcheck(EtudPrep) + ","
-				+ nullcheck(EtudDNP) + "," + nullcheck(EtudDDP) + "," + nullcheck(CnieMere) + ","
-				+ nullcheck(EtudNomm) + "," + nullcheck(Etudprem) + "," + nullcheck(EtudDNM) + ","
-				+ nullcheck(EtudDDM);
+		return "Id : " + nullcheck(EtudId) + " Nom : " + nullcheck(EtudNom) + " Prenom : " + nullcheck(EtudPre);
 	}
+
 	
+	public String toStringdao() {
+		return nullcheck(EtudId) + "," + nullcheck(EtudCNE) + "," + nullcheck(EtudNom) + "," + nullcheck(EtudPre) + ","
+				+ nullcheck(EtudSfam) + "," + nullcheck(EtudNat) + "," + nullcheck(EtudNai) + "," + nullcheck(EtudSexe)
+				+ "," + nullcheck(EtudAd1) + "," + nullcheck(EtudCPS) + "," + nullcheck(EtudVil) + ","
+				+ nullcheck(EtudDpt) + "," + nullcheck(EtudTel) + "," + nullcheck(EtudMail) + "," + nullcheck(EtudRib)
+				+ "," + nullcheck(CniePere) + "," + nullcheck(EtudNomp) + "," + nullcheck(EtudPrep) + ","
+				+ nullcheck(EtudDNP) + "," + nullcheck(EtudDDP) + "," + nullcheck(CnieMere) + "," + nullcheck(EtudNomm)
+				+ "," + nullcheck(Etudprem) + "," + nullcheck(EtudDNM) + "," + nullcheck(EtudDDM);
+	}
+
 	public String toStringimport() {
-		return    nullcheck(EtudId) +"," +  nullcheck(EtudCNE) + "," + nullcheck(EtudNom) + ","
-				+ nullcheck(EtudPre) + "," + nullcheck(EtudSfam) + "," + nullcheck(EtudNat) + ","
-				+ nullcheck(EtudNai) + "," + nullcheck(EtudSexe) + "," + nullcheck(EtudAd1) + ","
-				+ nullcheck(EtudCPS) + "," + nullcheck(EtudVil) + "," + nullcheck(EtudDpt) + ","
-				+ nullcheck(EtudTel) + "," + nullcheck(EtudMail) + "," + nullcheck(EtudRib) + ","
-				+ nullcheck(CniePere) + "," + nullcheck(EtudNomp) + "," + nullcheck(EtudPrep) + ","
-				+ nullcheck(EtudDNP) + "," + nullcheck(EtudDDP) + "," + nullcheck(CnieMere) + ","
-				+ nullcheck(EtudNomm) + "," + nullcheck(Etudprem) + "," + nullcheck(EtudDNM) + ","
-				+ nullcheck(EtudDDM);
+		return nullcheck(EtudId) + "," + nullcheck(EtudCNE) + "," + nullcheck(EtudNom) + "," + nullcheck(EtudPre) + ","
+				+ nullcheck(EtudSfam) + "," + nullcheck(EtudNat) + "," + nullcheck(EtudNai) + "," + nullcheck(EtudSexe)
+				+ "," + nullcheck(EtudAd1) + "," + nullcheck(EtudCPS) + "," + nullcheck(EtudVil) + ","
+				+ nullcheck(EtudDpt) + "," + nullcheck(EtudTel) + "," + nullcheck(EtudMail) + "," + nullcheck(EtudRib)
+				+ "," + nullcheck(CniePere) + "," + nullcheck(EtudNomp) + "," + nullcheck(EtudPrep) + ","
+				+ nullcheck(EtudDNP) + "," + nullcheck(EtudDDP) + "," + nullcheck(CnieMere) + "," + nullcheck(EtudNomm)
+				+ "," + nullcheck(Etudprem) + "," + nullcheck(EtudDNM) + "," + nullcheck(EtudDDM);
 	}
 
 	public Object nullcheck(Object obj) {
-		return obj == null ? "null" : ( obj instanceof Integer ? obj :   "'" + obj + "'");
+		return obj == null ? "null" : (obj instanceof Integer ? obj : "'" + obj + "'");
 	}
 
 }

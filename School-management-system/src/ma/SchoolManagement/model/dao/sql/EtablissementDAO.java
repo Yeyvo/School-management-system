@@ -8,6 +8,7 @@ import java.util.HashSet;
 import java.util.Set;
 
 import ma.SchoolManagement.model.Etablissement;
+import ma.SchoolManagement.model.Etudiant;
 
 public class EtablissementDAO extends DAO<Etablissement> {
 
@@ -62,13 +63,38 @@ public class EtablissementDAO extends DAO<Etablissement> {
 
 		return set_Etablissement;
 	}
+	
+	
+	public Etablissement findid(String id) {
+		Etablissement etab = null;
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT * FROM Etablissement where CodeEtab = " + id);
+			result.next();
+			etab = new Etablissement(result.getInt(1), result.getString(2), result.getString(3));
+
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return etab;
+	}
+	
 
 	@Override
 	public boolean create(Etablissement obj) {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			int result = stmt.executeUpdate("INSERT INTO Etablissement VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO Etablissement VALUES(" + obj.toStringdao() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {

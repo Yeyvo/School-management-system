@@ -3,14 +3,18 @@ package ma.SchoolManagement.controllers;
 import java.io.IOException;
 import java.net.URL;
 import java.time.LocalDate;
+import java.util.Locale;
 import java.util.ResourceBundle;
+import java.util.regex.Pattern;
 
+import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.TextField;
@@ -46,7 +50,7 @@ public class AjoutEleveController implements Initializable {
 	private TextField codePostalEleve;
 
 	@FXML
-	private TextField nationnaliteEleve;
+	private ChoiceBox<String> nationnaliteEleve;
 
 	@FXML
 	private TextField telephoneEleve;
@@ -55,7 +59,7 @@ public class AjoutEleveController implements Initializable {
 	private TextField mailEleve;
 
 	@FXML
-	private TextField situationFamilialeEleve;
+	private ChoiceBox<String> situationFamilialeEleve;
 
 	@FXML
 	private TextField RIBEleve;
@@ -116,10 +120,10 @@ public class AjoutEleveController implements Initializable {
 		etudAd1 = adresseEleve.getText();
 		ville = villeEleve.getText();
 		codePostal = codePostalEleve.getText();
-		etudNat = nationnaliteEleve.getText();
+		etudNat = nationnaliteEleve.getValue();
 		tel = telephoneEleve.getText();
 		mail = mailEleve.getText();
-		etudSfam = situationFamilialeEleve.getText();
+		etudSfam = situationFamilialeEleve.getValue();
 		RIB = RIBEleve.getText();
 		CNE = CNEEleve.getText();
 		dpt = departementEleve.getText();
@@ -131,37 +135,48 @@ public class AjoutEleveController implements Initializable {
 		CNIM = CNIMere.getText();
 		nomM = nomMere.getText();
 		prenomM = prenomMere.getText();
-		ddnMereLocal = dateNaissancePere.getValue();
-		dddMereLocal = dateDecesPere.getValue();
+		ddnMereLocal = dateNaissanceMere.getValue();
+		dddMereLocal = dateDecesMere.getValue();
 
 		if (nom.isBlank() || prenom.isBlank() || dateNaissanceEleve.getValue() == null || etudAd1.isBlank()
-				|| ville.isBlank() || codePostal.isBlank() || etudNat.isBlank() || tel.isBlank() || mail.isBlank()
-				|| etudSfam.isBlank() || RIB.isBlank() || CNE.isBlank() || dpt.isBlank() || CNIP.isBlank()
+				|| ville.isBlank() || codePostal.isBlank() || etudNat == null || tel.isBlank() || mail.isBlank()
+				|| etudSfam == null || RIB.isBlank() || CNE.isBlank() || dpt.isBlank() || CNIP.isBlank()
 				|| nomP.isBlank() || prenomP.isBlank() || dateNaissancePere.getValue() == null || CNIM.isBlank()
 				|| nomM.isBlank() || prenomM.isBlank() || dateNaissanceMere.getValue() == null) {
 			Alert alert = new Alert(AlertType.WARNING, "Veuillez remplir correctement tout les champs obligatoires");
 			alert.show();
 		} else {
 
-			Etudiant data = new Etudiant(0, CNE, nom, prenom, etudSfam, etudNat, etudNai, (homme ? "Male" : "Female"),
-					etudAd1, Integer.valueOf(codePostal), ville, dpt, tel, mail, RIB, CNIP, nomP, prenomP, ddnPereLocal,
-					dddPereLocal, CNIM, nomM, prenomM, ddnMereLocal, dddMereLocal);
-			if (!DAOFactory.getSQLDAOFactory().getEtudiantDAO().create(data)) {
-				Alert alert = new Alert(AlertType.WARNING, "Ajout impossible");
+			if (!Pattern.matches("^[0-9]*$", codePostalEleve.getText())) {
+
+				Alert alert = new Alert(AlertType.WARNING, "codePostal est un entier !!");
 				alert.show();
+
 			} else {
-				((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
+
+				Etudiant data = new Etudiant(0, CNE, nom, prenom, etudSfam, etudNat, etudNai,
+						(homme ? "Male" : "Female"), etudAd1, Integer.valueOf(codePostal), ville, dpt, tel, mail, RIB,
+						CNIP, nomP, prenomP, ddnPereLocal, dddPereLocal, CNIM, nomM, prenomM, ddnMereLocal,
+						dddMereLocal);
+				if (!DAOFactory.getSQLDAOFactory().getEtudiantDAO().create(data)) {
+					Alert alert = new Alert(AlertType.WARNING, "Ajout impossible");
+					alert.show();
+				} else {
+					((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
+				}
+
+				Stage stage = (Stage) CNEEleve.getScene().getWindow();
+				stage.close();
 			}
-
-			Stage stage = (Stage) CNEEleve.getScene().getWindow();
-			stage.close();
-
 		}
 	}
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		// TODO Auto-generated method stub
+		String[] locales = Locale.getISOCountries();
+		nationnaliteEleve.getItems().addAll(locales);
+
+		situationFamilialeEleve.getItems().addAll("Célibataire", "Marié(e)", "Divorcé(e)", "Autre");
 
 	}
 

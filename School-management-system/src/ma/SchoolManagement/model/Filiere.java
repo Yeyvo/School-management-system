@@ -37,7 +37,12 @@ public class Filiere {
 
 	@Override
 	public String toString() {
+		return  "CodeEtab : " +  CodeEtab + "  CodeFil :  " + CodeFil + " Designation " + DesFil ;
+	}
+
+	public String toStringdao() {
 		return  CodeEtab + "," + CodeFil + ",'" + DesFil + "'";
+
 	}
 	
 	

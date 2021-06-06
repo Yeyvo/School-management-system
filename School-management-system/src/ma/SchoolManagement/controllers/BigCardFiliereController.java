@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
@@ -25,6 +26,8 @@ public class BigCardFiliereController implements Initializable {
 
 	@FXML
 	private Text DesFil;
+	@FXML
+	private Text desEtab;
 	@FXML
 	private Text CodeFil;
 	@FXML
@@ -48,6 +51,9 @@ public class BigCardFiliereController implements Initializable {
 			((ModifFiliereController) loader.getController()).setElv(fil);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
+			stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+			stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -74,6 +80,10 @@ public class BigCardFiliereController implements Initializable {
 
 	public void setFil(Filiere etab) {
 		this.fil = etab;
+		
+		Etablissement e = DAOFactory.getSQLDAOFactory().getEtablissementDAO().findid(String.valueOf(fil.getCodeEtab()));
+
+		desEtab.setText(e.getDesEtab());
 		DesFil.setText(etab.getDesFil());
 		CodeFil.setText(String.valueOf(etab.getCodeFil()));
 		CodeEtab.setText(String.valueOf(etab.getCodeEtab()));

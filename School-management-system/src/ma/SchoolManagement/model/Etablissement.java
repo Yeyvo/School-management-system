@@ -36,6 +36,10 @@ public class Etablissement {
 
 	@Override
 	public String toString() {
+		return  " CodeEtab : " + CodeEtab + " Designation : " + DesEtab + " DPM " + EtudDPM ;
+	}
+	
+	public String toStringdao() {
 		return  CodeEtab + ",'" + DesEtab + "','" + EtudDPM + "'";
 	}
 	

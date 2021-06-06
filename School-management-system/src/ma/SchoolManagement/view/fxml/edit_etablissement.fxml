@@ -50,7 +50,7 @@
                <children>
                   <HBox alignment="CENTER">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="designation" wrappingWidth="115.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Designation" wrappingWidth="115.0">
                            <HBox.margin>
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
@@ -64,7 +64,7 @@
                   </HBox>
                   <HBox alignment="CENTER">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="ETUDPM" wrappingWidth="115.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Personne morale de droit public de privé" wrappingWidth="129.0">
                            <HBox.margin>
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>

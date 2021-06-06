@@ -3,7 +3,7 @@
 <?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -50,16 +50,12 @@
                <children>
                   <HBox alignment="CENTER">
                      <children>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudInsc" wrappingWidth="115.0">
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Année scolaire" wrappingWidth="115.0">
                            <HBox.margin>
                               <Insets left="7.0" top="5.0" />
                            </HBox.margin>
                         </Text>
-                        <TextField fx:id="EtudInsc">
-                           <HBox.margin>
-                              <Insets left="5.0" top="5.0" />
-                           </HBox.margin>
-                        </TextField>
+                        <ChoiceBox fx:id="EtudInsc" prefWidth="150.0" />
                      </children>
                   </HBox>
                </children>

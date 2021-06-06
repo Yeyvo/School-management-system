@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<HBox alignment="CENTER" prefHeight="238.0" prefWidth="454.0" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardInscriptionController">
+<HBox alignment="CENTER" prefHeight="210.0" prefWidth="454.0" style="-fx-background-radius: 30;" styleClass="back-light-gray" stylesheets="@../css/style.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ma.SchoolManagement.controllers.BigCardInscriptionController">
    <children>
       <ImageView fitHeight="102.0" fitWidth="97.0" styleClass="back-transparent">
          <image>
@@ -28,7 +28,7 @@
             <Insets bottom="5.0" top="5.0" />
          </padding>
          <children>
-            <Text fx:id="nomprenom" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-18" text="NOM + Prenom" visible="false">
+            <Text fx:id="nomprenom" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-18" text="NOM + Prenom">
                <VBox.margin>
                   <Insets bottom="10.0" left="7.0" top="7.0" />
                </VBox.margin>
@@ -36,12 +36,12 @@
             <HBox prefHeight="23.0" prefWidth="237.0" />
             <HBox>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudId" wrappingWidth="115.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="id Etudiant" wrappingWidth="115.0">
                      <HBox.margin>
                         <Insets bottom="3.0" top="2.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="EtudId" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                  <Text fx:id="EtudId" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="53.0">
                      <HBox.margin>
                         <Insets bottom="3.0" top="2.0" />
                      </HBox.margin></Text>
@@ -49,33 +49,43 @@
             </HBox>
             <HBox>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudEtab" wrappingWidth="115.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Etablissement" wrappingWidth="115.0">
                      <HBox.margin>
                         <Insets bottom="3.0" top="2.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="EtudEtab" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
+                  <Text fx:id="EtudEtab" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="53.0">
                      <HBox.margin>
                         <Insets bottom="3.0" top="2.0" />
                      </HBox.margin></Text>
-               </children>
-            </HBox>
-            <HBox>
-               <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="EtudFil" wrappingWidth="115.0">
+                  <Text fx:id="nomEtab" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="53.0">
                      <HBox.margin>
                         <Insets bottom="3.0" top="2.0" />
                      </HBox.margin>
                   </Text>
-                  <Text fx:id="EtudFil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="122.0">
-                     <HBox.margin>
-                        <Insets bottom="3.0" top="2.0" />
-                     </HBox.margin></Text>
                </children>
             </HBox>
             <HBox>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="etudInsc" wrappingWidth="115.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Filiere" wrappingWidth="115.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+                  <Text fx:id="EtudFil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="54.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin></Text>
+                  <Text fx:id="nonfil" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="________" wrappingWidth="54.0">
+                     <HBox.margin>
+                        <Insets bottom="3.0" top="2.0" />
+                     </HBox.margin>
+                  </Text>
+               </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Année Scolaire" wrappingWidth="115.0">
                      <HBox.margin>
                         <Insets bottom="3.0" top="2.0" />
                      </HBox.margin>

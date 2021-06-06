@@ -10,10 +10,12 @@ import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.CheckBox;
+import javafx.scene.image.Image;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ma.SchoolManagement.Main;
+import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.ServicesEtud;
 import ma.SchoolManagement.model.dao.DAOFactory;
 import ma.SchoolManagement.view.SceneNames;
@@ -21,6 +23,8 @@ import ma.SchoolManagement.view.helpers.DynamicViews;
 
 public class BigCardServicesController implements Initializable {
 
+	@FXML
+	private Text nom;
 	@FXML
 	private Text id;
 	@FXML
@@ -54,6 +58,9 @@ public class BigCardServicesController implements Initializable {
 			((ModifServicesController) loader.getController()).setSrv(srv);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
+			stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+			stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -80,6 +87,12 @@ public class BigCardServicesController implements Initializable {
 
 	public void setSrv(ServicesEtud srv) {
 		this.srv = srv;
+		
+		
+		Etudiant etud = DAOFactory.getSQLDAOFactory().getEtudiantDAO().findid(String.valueOf(srv.getEtudId()));
+		nom.setText(etud.getEtudNom() + " " + etud.getEtudPrenom());
+		
+		
 		id.setText(String.valueOf(srv.getEtudId()));
 		EtudANSC.setText(srv.getEtudANSC());
 		EtudBO.setSelected(srv.isEtudBO());

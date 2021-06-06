@@ -94,7 +94,7 @@
                         <Insets bottom="50.0" left="30.0" top="20.0" />
                      </VBox.margin>
                   </Text>
-                  <VBox fx:id="vboxBig" prefHeight="200.0" prefWidth="100.0" />
+                  <VBox fx:id="vboxBig" />
                </children>
             </VBox>
          </children>

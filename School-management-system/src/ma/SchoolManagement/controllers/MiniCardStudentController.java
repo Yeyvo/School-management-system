@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ma.SchoolManagement.Main;
@@ -43,6 +44,9 @@ public class MiniCardStudentController implements Initializable {
 			((ModifEleveController) loader.getController()).setElv(elv);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
+			stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+			stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();

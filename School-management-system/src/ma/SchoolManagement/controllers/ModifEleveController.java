@@ -9,6 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.CheckBox;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
@@ -36,7 +37,7 @@ public class ModifEleveController implements Initializable {
 	@FXML
 	private TextField cps;
 	@FXML
-	private TextField situationFamilialeEleve;
+	private ChoiceBox<String> situationFamilialeEleve;
 	@FXML
 	private TextField RIBEleve;
 	@FXML
@@ -48,6 +49,9 @@ public class ModifEleveController implements Initializable {
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
+		
+	    situationFamilialeEleve.getItems().addAll("Célibataire", "Marié(e)", "Divorcé(e)","Autre");
+
 	}
 
 	@FXML
@@ -57,7 +61,7 @@ public class ModifEleveController implements Initializable {
 		String v = ville.getText();
 		String cp = cps.getText();
 		String mail = mailEleve.getText();
-		String sF = situationFamilialeEleve.getText();
+		String sF = situationFamilialeEleve.getValue();
 		String RIB = RIBEleve.getText();
 		boolean pere = pereDeces.isSelected();
 		boolean mere = mereDeces.isSelected();
@@ -78,7 +82,7 @@ public class ModifEleveController implements Initializable {
 		if (!mail.isBlank())
 			elv.setEtudMail(mail);
 
-		if (!sF.isBlank())
+		if (sF != null)
 			elv.setEtudSfam(sF);
 
 		if (!RIB.isBlank())

@@ -28,9 +28,10 @@ public class EtudiantDAO extends DAO<Etudiant> {
 						result.getString(8), result.getString(9), result.getInt(10), result.getString(11),
 						result.getString(12), result.getString(13), result.getString(14), result.getString(15),
 						result.getString(16), result.getString(17), result.getString(18),
-						result.getDate(19).toLocalDate(), result.getDate(20).toLocalDate(), result.getString(21),
+						result.getDate(19).toLocalDate(),
+						result.getDate(20) == null ? null : result.getDate(20).toLocalDate(), result.getString(21),
 						result.getString(22), result.getString(23), result.getDate(24).toLocalDate(),
-						result.getDate(25).toLocalDate()));
+						result.getDate(25) == null ? null : result.getDate(25).toLocalDate()));
 			}
 			result.close();
 		} catch (SQLException e) {
@@ -65,40 +66,31 @@ public class EtudiantDAO extends DAO<Etudiant> {
 //		}
 //		return false;
 //	}
-	
-	/*public boolean createimport(Etudiant obj) {
-		Statement stmt = null;
-		try {
-			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			System.out.println("INSERT INTO Etudiant (EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
-					+ obj.toStringimport() + ")");
-			int result = stmt.executeUpdate(
-					"INSERT INTO Etudiant (EtudId ,EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
-							+ obj.toStringimport() + ")");
-			System.out.println(result + " Row affected ! ");
-			return true;
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} finally {
-			try {
-				stmt.close();
-			} catch (SQLException e) {
-				e.printStackTrace();
-			}
-		}
-		return false;
-	}*/
-	
+
+	/*
+	 * public boolean createimport(Etudiant obj) { Statement stmt = null; try { stmt
+	 * = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY,
+	 * ResultSet.CONCUR_READ_ONLY); System.out.
+	 * println("INSERT INTO Etudiant (EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
+	 * + obj.toStringimport() + ")"); int result = stmt.executeUpdate(
+	 * "INSERT INTO Etudiant (EtudId ,EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
+	 * + obj.toStringimport() + ")"); System.out.println(result +
+	 * " Row affected ! "); return true; } catch (SQLException e) {
+	 * e.printStackTrace(); } finally { try { stmt.close(); } catch (SQLException e)
+	 * { e.printStackTrace(); } } return false; }
+	 */
+
 	@Override
 	public boolean create(Etudiant obj) {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
-			System.out.println("INSERT INTO Etudiant (EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
-							+ obj.toString() + ")");
+			System.out.println(
+					"INSERT INTO Etudiant (EtudId,EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
+							+ obj.toStringdao() + ")");
 			int result = stmt.executeUpdate(
-					"INSERT INTO Etudiant (EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
-							+ obj.toString() + ")");
+					"INSERT INTO Etudiant (EtudId,EtudCNE ,EtudNom ,EtudPrenom ,EtudSfam ,EtudNat ,EtudNai ,EtudSexe ,EtudAd1 ,EtudCPS ,EtudVil ,EtudDpt ,EtudTel ,EtudMail ,EtudRib ,CniePere ,EtudNomp ,EtudPrep ,EtudDNP ,EtudDDP ,CnieMere ,EtudNomm ,Etudprem ,EtudDNM ,EtudDDM ) VALUES("
+							+ obj.toStringdao() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {
@@ -158,9 +150,10 @@ public class EtudiantDAO extends DAO<Etudiant> {
 						result.getString(8), result.getString(9), result.getInt(10), result.getString(11),
 						result.getString(12), result.getString(13), result.getString(14), result.getString(15),
 						result.getString(16), result.getString(17), result.getString(18),
-						result.getDate(19).toLocalDate(), result.getDate(20).toLocalDate(), result.getString(21),
+						result.getDate(19).toLocalDate(),
+						result.getDate(20) == null ? null : result.getDate(20).toLocalDate(), result.getString(21),
 						result.getString(22), result.getString(23), result.getDate(24).toLocalDate(),
-						result.getDate(25).toLocalDate()));
+						result.getDate(25) == null ? null : result.getDate(25).toLocalDate()));
 			}
 			result.close();
 		} catch (SQLException e) {
@@ -174,6 +167,37 @@ public class EtudiantDAO extends DAO<Etudiant> {
 		}
 
 		return set_Etudiant;
+	}
+
+	public Etudiant findid(String id) {
+		Etudiant etudiant = null;
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT * FROM Etudiant where EtudId = " + id);
+			result.next();
+			etudiant = new Etudiant(result.getInt(1), result.getString(2), result.getString(3),
+					result.getString(4), result.getString(5), result.getString(6), result.getDate(7).toLocalDate(),
+					result.getString(8), result.getString(9), result.getInt(10), result.getString(11),
+					result.getString(12), result.getString(13), result.getString(14), result.getString(15),
+					result.getString(16), result.getString(17), result.getString(18),
+					result.getDate(19).toLocalDate(),
+					result.getDate(20) == null ? null : result.getDate(20).toLocalDate(), result.getString(21),
+					result.getString(22), result.getString(23), result.getDate(24).toLocalDate(),
+					result.getDate(25) == null ? null : result.getDate(25).toLocalDate());
+
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return etudiant;
 	}
 
 }

@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
@@ -47,6 +48,9 @@ public class BigCardEtablissementController implements Initializable {
 			((ModifEtablissementController) loader.getController()).setEtablissement(etab);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
+			stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+			stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();

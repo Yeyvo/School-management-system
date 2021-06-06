@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import ma.SchoolManagement.Main;
@@ -23,6 +24,8 @@ public class MiniCardFiliereController implements Initializable {
 	
 	@FXML
 	private Text nom;
+	@FXML
+	private Text ecole;
 	
 	private Filiere fil;
 
@@ -42,6 +45,9 @@ public class MiniCardFiliereController implements Initializable {
 			((ModifFiliereController) loader.getController()).setElv(fil);
 			Stage stage = new Stage();
 			stage.setScene(new Scene(info));
+			stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+			stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+			stage.setResizable(false);
 			stage.show();
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -68,9 +74,13 @@ public class MiniCardFiliereController implements Initializable {
 		return fil;
 	}
 
-	public void setElv(Filiere etab) {
-		this.fil = etab;
-		nom.setText(etab.getDesFil());
+	public void setElv(Filiere fil) {
+		this.fil = fil;
+		
+		Etablissement etab = DAOFactory.getSQLDAOFactory().getEtablissementDAO().findid(String.valueOf(fil.getCodeEtab()));
+		
+		nom.setText(fil.getDesFil());
+		ecole.setText(etab.getDesEtab());
 
 	}
 

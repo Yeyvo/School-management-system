@@ -7,6 +7,8 @@ import java.sql.Statement;
 import java.util.HashSet;
 import java.util.Set;
 
+import javafx.util.Callback;
+import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.Filiere;
 
 public class FiliereDAO extends DAO<Filiere> {
@@ -45,7 +47,7 @@ public class FiliereDAO extends DAO<Filiere> {
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
 			System.out.println("INSERT INTO Filiere VALUES(" + obj.toString() + ")");
-			int result = stmt.executeUpdate("INSERT INTO Filiere VALUES(" + obj.toString() + ")");
+			int result = stmt.executeUpdate("INSERT INTO Filiere VALUES(" + obj.toStringdao() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
 		} catch (SQLException e) {
@@ -115,6 +117,51 @@ public class FiliereDAO extends DAO<Filiere> {
 		}
 
 		return setdata;
+	}
+
+	public Set<Filiere> allinEtab(int id) {
+		Set<Filiere> set_Filiere = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT * FROM Filiere where CodeEtab = " + id);
+			while (result.next()) {
+				set_Filiere.add(new Filiere(result.getInt(1), result.getInt(2), result.getString(3)));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return set_Filiere;
+	}
+
+	public Filiere findid(int idfil, int idEtab) {
+		Filiere fl = null;
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT * FROM Filiere where CodeFil = " + idfil + " and  CodeEtab = " + idEtab);
+			result.next();
+			fl = new Filiere(result.getInt(1), result.getInt(2), result.getString(3));
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return fl;
 	}
 
 }

@@ -16,6 +16,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
@@ -51,6 +52,9 @@ public class ControllerEleve implements Initializable {
 				.load(new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/edit_eleve.fxml"));
 		Stage stage = new Stage();
 		stage.setScene(new Scene(home));
+		stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+		stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+		stage.setResizable(false);
 		stage.show();
 	}
 
@@ -60,6 +64,9 @@ public class ControllerEleve implements Initializable {
 				.load(new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/ajout_eleve.fxml"));
 		Stage stage = new Stage();
 		stage.setScene(new Scene(home));
+		stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+		stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+		stage.setResizable(false);
 		stage.show();
 	}
 

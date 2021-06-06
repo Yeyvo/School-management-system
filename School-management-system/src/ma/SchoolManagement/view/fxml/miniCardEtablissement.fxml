@@ -15,6 +15,9 @@
          <image>
             <Image url="@../icons/school-color.png" />
          </image>
+         <HBox.margin>
+            <Insets bottom="5.0" left="7.0" />
+         </HBox.margin>
       </ImageView>
       <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" wrappingWidth="116.6875">
          <HBox.margin>
