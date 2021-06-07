@@ -16,6 +16,8 @@ public class helpers {
 	}
 	
 	public static LocalDate convertToLocalDate(Date dateToConvert) {
+		if(dateToConvert == null)
+			return null;
 		return dateToConvert.toInstant().atZone(ZoneId.systemDefault()).toLocalDate();
 	}
 }

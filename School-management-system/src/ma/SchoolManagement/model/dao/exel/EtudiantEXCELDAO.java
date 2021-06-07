@@ -1,12 +1,15 @@
 package ma.SchoolManagement.model.dao.exel;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
+import java.util.Date;
 import java.util.Iterator;
 import java.util.Set;
 
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.CellStyle;
 import org.apache.poi.ss.usermodel.DataFormatter;
+import org.apache.poi.ss.usermodel.FormulaEvaluator;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
@@ -31,7 +34,7 @@ public class EtudiantEXCELDAO extends DAOEXCEL<Etudiant> {
 		Cell cell1 = r.createCell(0);
 		cell1.setCellValue("EtudId");
 		cell1.setCellStyle(stylecellhead);
-		
+
 		Cell cell2 = r.createCell(1);
 		cell2.setCellValue("EtudCPS");
 		cell2.setCellStyle(stylecellhead);
@@ -133,7 +136,6 @@ public class EtudiantEXCELDAO extends DAOEXCEL<Etudiant> {
 			writeEtudiant(data, row, stylecellbase, workbook, datecell);
 		}
 
-		
 		for (int y = 0; y < sheet.getRow(1).getPhysicalNumberOfCells(); y++) {
 			sheet.autoSizeColumn(y);
 		}
@@ -147,7 +149,7 @@ public class EtudiantEXCELDAO extends DAOEXCEL<Etudiant> {
 		Cell cell1 = row.createCell(0);
 		cell1.setCellValue(data.getEtudId());
 		cell1.setCellStyle(stylecellbase);
-		
+
 		Cell cell2 = row.createCell(1);
 		cell2.setCellValue(data.getEtudCPS());
 		cell2.setCellStyle(stylecellbase);
@@ -256,13 +258,14 @@ public class EtudiantEXCELDAO extends DAOEXCEL<Etudiant> {
 //			rowIterator.next(); 
 		// skip the header row
 		DataFormatter formatter = new DataFormatter();
+
 		while (rowIterator.hasNext()) {
 			Row nextRow = rowIterator.next();
 			Iterator<Cell> cellIterator = nextRow.cellIterator();
 
 			if (cellIterator.hasNext()) {
 
-//							int id = Integer.valueOf(formatter.formatCellValue(cellIterator.next()));
+				int id = Integer.valueOf(formatter.formatCellValue(cellIterator.next()));
 				int cps = Integer.valueOf(formatter.formatCellValue(cellIterator.next()));
 
 				String EtudCNE = formatter.formatCellValue(cellIterator.next()),
@@ -278,19 +281,24 @@ public class EtudiantEXCELDAO extends DAOEXCEL<Etudiant> {
 						EtudMail = formatter.formatCellValue(cellIterator.next()),
 						EtudRib = formatter.formatCellValue(cellIterator.next());
 				LocalDate EtudNai = helpers.convertToLocalDate(cellIterator.next().getDateCellValue());
+//				System.out.println(date.formatCellValue(cellIterator.next(),evaluator));
+//				LocalDate EtudNai = null;
 				String CniePere = formatter.formatCellValue(cellIterator.next()),
 						EtudNomp = formatter.formatCellValue(cellIterator.next()),
 						EtudPrep = formatter.formatCellValue(cellIterator.next());
-				LocalDate EtudDNP = helpers.convertToLocalDate(cellIterator.next().getDateCellValue()),
-						EtudDDP = helpers.convertToLocalDate(cellIterator.next().getDateCellValue());
+
+				LocalDate EtudDNP = helpers.convertToLocalDate(cellIterator.next().getDateCellValue());
+				Cell cellddp = cellIterator.next();
+				LocalDate EtudDDP = helpers.convertToLocalDate(cellddp == null ? null : cellddp.getDateCellValue());
 				String CnieMere = formatter.formatCellValue(cellIterator.next()),
 						EtudNomm = formatter.formatCellValue(cellIterator.next()),
 						Etudprem = formatter.formatCellValue(cellIterator.next());
 
-				LocalDate EtudDNM = helpers.convertToLocalDate(cellIterator.next().getDateCellValue()),
-						EtudDDM = helpers.convertToLocalDate(cellIterator.next().getDateCellValue());
+				LocalDate EtudDNM = helpers.convertToLocalDate(cellIterator.next().getDateCellValue());
+				Cell cellddm = cellIterator.next();
+				LocalDate EtudDDM = helpers.convertToLocalDate(cellddm == null ? null : cellddm.getDateCellValue());
 
-				Etudiant Etud = new Etudiant(0, EtudCNE, EtudNom, EtudPre, EtudSfam, EtudNat, EtudNai, EtudSexe,
+				Etudiant Etud = new Etudiant(id, EtudCNE, EtudNom, EtudPre, EtudSfam, EtudNat, EtudNai, EtudSexe,
 						EtudAd1, cps, EtudVil, EtudDpt, EtudTel, EtudMail, EtudRib, CniePere, EtudNomp, EtudPrep,
 						EtudDNP, EtudDDP, CnieMere, EtudNomm, Etudprem, EtudDNM, EtudDDM);
 
