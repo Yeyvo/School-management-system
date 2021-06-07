@@ -15,8 +15,10 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import ma.SchoolManagement.Main;
 import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.dao.DAOFactory;
+import ma.SchoolManagement.view.SceneNames;
 
 public class ModifEleveController implements Initializable {
 
@@ -113,6 +115,8 @@ public class ModifEleveController implements Initializable {
 		}
 		if(valide) {
 			DAOFactory.getSQLDAOFactory().getEtudiantDAO().update(elv, elv);
+			ControllerEleve cont  = ((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController());
+			cont.search();
 			Stage stage = (Stage) pereDeces.getScene().getWindow();
 			stage.close();			
 		}

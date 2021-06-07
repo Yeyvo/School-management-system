@@ -12,10 +12,12 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import ma.SchoolManagement.Main;
 import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.ServicesEtud;
 import ma.SchoolManagement.model.dao.DAOFactory;
+import ma.SchoolManagement.view.SceneNames;
 
 public class ModifServicesController implements Initializable {
 
@@ -68,6 +70,8 @@ public class ModifServicesController implements Initializable {
 		}
 		if (valide) {
 			DAOFactory.getSQLDAOFactory().getServicesEtudDAO().update(srv, srv);
+			ControllerService cont = ((ControllerService) Main.getScenesloaders().get(SceneNames.SERVICE).getController());
+			cont.search();
 			Stage stage = (Stage) couvMed.getScene().getWindow();
 			stage.close();
 		}

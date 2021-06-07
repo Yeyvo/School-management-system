@@ -109,11 +109,11 @@ public class ServicesEtudEXCELDAO extends DAOEXCEL<ServicesEtud> {
 			if (cellIterator.hasNext()) {
 
 				int EtudId = Integer.valueOf(formatter.formatCellValue(cellIterator.next()));
-				boolean EtudBO = Boolean.valueOf(formatter.formatCellValue(cellIterator.next())),
-						EtudCU = Boolean.valueOf(formatter.formatCellValue(cellIterator.next())),
+				String EtudANSC = formatter.formatCellValue(cellIterator.next());
+				boolean EtudCU = Boolean.valueOf(formatter.formatCellValue(cellIterator.next())),
+						EtudBO = Boolean.valueOf(formatter.formatCellValue(cellIterator.next())),
 						EtudCMB = Boolean.valueOf(formatter.formatCellValue(cellIterator.next()));
-				String EtudCMBO = formatter.formatCellValue(cellIterator.next()),
-						EtudANSC = formatter.formatCellValue(cellIterator.next());
+				String EtudCMBO = formatter.formatCellValue(cellIterator.next());
 
 				ServicesEtud serv = new ServicesEtud(EtudId, EtudANSC, EtudBO, EtudCU, EtudCMB, EtudCMBO);
 				if (!DAOFactory.getSQLDAOFactory().getServicesEtudDAO().create(serv)) {

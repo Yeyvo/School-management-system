@@ -13,11 +13,13 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.Alert.AlertType;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import ma.SchoolManagement.Main;
 import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.Inscription;
 import ma.SchoolManagement.model.ServicesEtud;
 import ma.SchoolManagement.model.dao.DAOFactory;
+import ma.SchoolManagement.view.SceneNames;
 
 public class ModifInscripionController implements Initializable {
 
@@ -41,7 +43,8 @@ public class ModifInscripionController implements Initializable {
 			insc.setEtudInsc(EtudInscstr);
 
 			DAOFactory.getSQLDAOFactory().getInscriptionDAO().update(insc, insc);
-
+			ControllerInscription cont  = ((ControllerInscription) Main.getScenesloaders().get(SceneNames.INSCRIPTION).getController());
+			cont.search();
 			Stage stage = (Stage) EtudInsc.getScene().getWindow();
 			stage.close();
 		} else {

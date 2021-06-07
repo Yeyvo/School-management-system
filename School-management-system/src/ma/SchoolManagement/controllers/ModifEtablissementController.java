@@ -12,9 +12,11 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import ma.SchoolManagement.Main;
 import ma.SchoolManagement.model.Etablissement;
 import ma.SchoolManagement.model.Etudiant;
 import ma.SchoolManagement.model.dao.DAOFactory;
+import ma.SchoolManagement.view.SceneNames;
 
 public class ModifEtablissementController implements Initializable {
 
@@ -42,7 +44,10 @@ public class ModifEtablissementController implements Initializable {
 		if (!dpm.isBlank())
 			etab.setEtudDPM(dpm);
 
-		DAOFactory.getSQLDAOFactory().getEtablissementDAO().update(etab, etab);
+		if(DAOFactory.getSQLDAOFactory().getEtablissementDAO().update(etab, etab)) {
+			((ControllerEtablissement) Main.getScenesloaders().get(SceneNames.ETABLISSEMENT).getController()).setBig(etab);
+			((ControllerEtablissement) Main.getScenesloaders().get(SceneNames.ETABLISSEMENT).getController()).search();
+		}
 
 		Stage stage = (Stage) dpmtxt.getScene().getWindow();
 		stage.close();
