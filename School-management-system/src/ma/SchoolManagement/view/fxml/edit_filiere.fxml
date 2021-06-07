@@ -63,7 +63,7 @@
             </VBox>
          </children>
       </HBox>
-      <Button fx:id="modifEleve" mnemonicParsing="false" onAction="#vall" prefHeight="51.0" prefWidth="610.0" text="Modifier">
+      <Button fx:id="modifEleve" mnemonicParsing="false" onAction="#vall" prefHeight="51.0" prefWidth="1500.0" text="Modifier">
          <styleClass>
             <String fx:value="fn-24" />
             <String fx:value="back-green" />

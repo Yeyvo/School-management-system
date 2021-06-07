@@ -43,7 +43,8 @@ public class ControllerService implements Initializable {
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().all();
-		search();
+		//if(services != null) {
+			search();
 
 	}
 
