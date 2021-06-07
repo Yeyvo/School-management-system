@@ -45,6 +45,7 @@ public class InscriptionDAO extends DAO<Inscription> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			System.out.println("INSERT INTO Inscription VALUES(" + obj.toString() + ")");
 			int result = stmt.executeUpdate("INSERT INTO Inscription VALUES(" + obj.toString() + ")");
 			System.out.println(result + " Row affected ! ");
 			return true;
@@ -65,6 +66,8 @@ public class InscriptionDAO extends DAO<Inscription> {
 		Statement stmt = null;
 		try {
 			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			System.out.println("DELETE FROM Inscription WHERE EtudId  = " + obj.getEtudId()
+					+ " and EtudEtab= " + obj.getEtudEtab() + " and EtudInsc  = '" + obj.getEtudInsc() + "'");
 			int result = stmt.executeUpdate("DELETE FROM Inscription WHERE EtudId  = " + obj.getEtudId()
 					+ " and EtudEtab= " + obj.getEtudEtab() + " and EtudInsc  = '" + obj.getEtudInsc() + "'");
 			System.out.println(result + " Row affected !");
