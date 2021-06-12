@@ -43,6 +43,16 @@
                </HBox.margin>
             </Text>
             <ChoiceBox fx:id="EtudId" prefHeight="25.0" prefWidth="146.0" />
+            <Button mnemonicParsing="false" onAction="#addelv" prefHeight="35.0" prefWidth="37.0" style="-fx-background-radius: 10;" text="+">
+               <styleClass>
+                  <String fx:value="fn-16" />
+                  <String fx:value="back-green" />
+                  <String fx:value="flat" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
          </children>
          <VBox.margin>
             <Insets bottom="5.0" />
@@ -56,6 +66,16 @@
                </HBox.margin>
             </Text>
             <ChoiceBox fx:id="EtudEtab" prefHeight="25.0" prefWidth="146.0" />
+            <Button mnemonicParsing="false" onAction="#addetab" prefHeight="35.0" prefWidth="37.0" style="-fx-background-radius: 10;" text="+">
+               <styleClass>
+                  <String fx:value="fn-16" />
+                  <String fx:value="back-green" />
+                  <String fx:value="flat" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="10.0" />
+               </HBox.margin>
+            </Button>
          </children>
          <VBox.margin>
             <Insets bottom="5.0" />
@@ -69,6 +89,16 @@
                </HBox.margin>
             </Text>
             <ChoiceBox fx:id="EtudFil" prefHeight="25.0" prefWidth="146.0" />
+            <Button mnemonicParsing="false" onAction="#addfil" prefHeight="35.0" prefWidth="37.0" style="-fx-background-radius: 10;" text="+">
+               <styleClass>
+                  <String fx:value="fn-16" />
+                  <String fx:value="back-green" />
+                  <String fx:value="flat" />
+               </styleClass>
+               <HBox.margin>
+                  <Insets left="15.0" />
+               </HBox.margin>
+            </Button>
          </children>
          <VBox.margin>
             <Insets bottom="5.0" />

@@ -45,14 +45,16 @@ public class ModifEleveController implements Initializable {
 	@FXML
 	private DatePicker dateDecesMere;
 	@FXML
+	private DatePicker dateDecesPere;
+	@FXML
 	private Text fullname;
 
 	private Etudiant elv;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
-		
-	    situationFamilialeEleve.getItems().addAll("Célibataire", "Marié(e)", "Divorcé(e)","Autre");
+
+		situationFamilialeEleve.getItems().addAll("Célibataire", "Marié(e)", "Divorcé(e)", "Autre");
 
 	}
 
@@ -67,7 +69,8 @@ public class ModifEleveController implements Initializable {
 		String RIB = RIBEleve.getText();
 		boolean pere = pereDeces.isSelected();
 		boolean mere = mereDeces.isSelected();
-		LocalDate ddd = dateDecesMere.getValue();
+		LocalDate dddm = dateDecesMere.getValue();
+		LocalDate dddp = dateDecesPere.getValue();
 
 		if (!adresse.isBlank())
 			elv.setEtudAd1(adresse);
@@ -91,10 +94,10 @@ public class ModifEleveController implements Initializable {
 			elv.setEtudRib(RIB);
 
 		boolean valide = true;
-		
+
 		if (pere) {
-			if (dateDecesMere.getValue() != null) {
-				elv.setEtudDDP(ddd);
+			if (dateDecesPere.getValue() != null) {
+				elv.setEtudDDP(dddp);
 			} else {
 				Alert alert = new Alert(AlertType.WARNING,
 						"Veuillez remplir correctement tout les champs obligatoires");
@@ -105,7 +108,7 @@ public class ModifEleveController implements Initializable {
 		}
 		if (mere) {
 			if (dateDecesMere.getValue() != null) {
-				elv.setEtudDDM(ddd);
+				elv.setEtudDDM(dddm);
 			} else {
 				Alert alert = new Alert(AlertType.WARNING,
 						"Veuillez remplir correctement tout les champs obligatoires");
@@ -113,14 +116,13 @@ public class ModifEleveController implements Initializable {
 				valide = false;
 			}
 		}
-		if(valide) {
+		if (valide) {
 			DAOFactory.getSQLDAOFactory().getEtudiantDAO().update(elv, elv);
-			ControllerEleve cont  = ((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController());
+			ControllerEleve cont = ((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController());
 			cont.search();
 			Stage stage = (Stage) pereDeces.getScene().getWindow();
-			stage.close();			
+			stage.close();
 		}
-
 
 	}
 
@@ -131,6 +133,23 @@ public class ModifEleveController implements Initializable {
 	public void setElv(Etudiant elv) {
 		this.elv = elv;
 		fullname.setText(elv.getEtudNom() + " " + elv.getEtudPrenom());
+
+		adresseEleve.setText(elv.getEtudAd1());
+		ville.setText(elv.getEtudVil());
+		cps.setText(String.valueOf(elv.getEtudCPS()));
+		telephoneEleve.setText(elv.getEtudTel());
+		mailEleve.setText(elv.getEtudMail());
+		situationFamilialeEleve.getSelectionModel().select(elv.getEtudSfam());
+		RIBEleve.setText(elv.getEtudRib());
+		if (elv.getEtudDDP() != null) {
+			pereDeces.setSelected(true);
+			dateDecesPere.setValue(elv.getEtudDDP());
+		}
+		if (elv.getEtudDDM() != null) {
+			mereDeces.setSelected(true);
+			dateDecesMere.setValue(elv.getEtudDDM());
+		}
+
 	}
 
 }

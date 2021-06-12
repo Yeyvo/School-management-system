@@ -57,6 +57,7 @@ public class ModifFiliereController implements Initializable {
 	public void setElv(Filiere elv) {
 		this.elv = elv;
 		fullname.setText(elv.toString());
+		DesFil.setText(elv.getDesFil());
 	}
 
 }

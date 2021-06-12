@@ -23,6 +23,8 @@ public class AjoutEtablissementController implements Initializable {
 	@FXML
 	private TextField dpm;
 
+	boolean search = true;
+	
 	@FXML
 	private void add_eleve() throws IOException {
 
@@ -36,6 +38,7 @@ public class AjoutEtablissementController implements Initializable {
 				Alert alert = new Alert(AlertType.WARNING, "Ajout impossible");
 				alert.show();
 			} else {
+				if(search)
 				((ControllerEtablissement) Main.getScenesloaders().get(SceneNames.ETABLISSEMENT).getController())
 						.search();
 			}
@@ -50,4 +53,14 @@ public class AjoutEtablissementController implements Initializable {
 
 	}
 
+	public boolean isSearch() {
+		return search;
+	}
+
+	public void setSearch(boolean search) {
+		this.search = search;
+	}
+
+	
+	
 }

@@ -30,7 +30,6 @@
                         <String fx:value="fill-green" />
                      </styleClass>
                   </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-24" text="Nom + Prenom " />
                </children>
             </VBox>
          </children>
@@ -56,10 +55,20 @@
                            </HBox.margin>
                         </Text>
                         <ChoiceBox fx:id="idEtudiant" prefWidth="150.0" />
+                        <Button mnemonicParsing="false" onAction="#addelv" prefHeight="35.0" prefWidth="37.0" style="-fx-background-radius: 10;" text="+">
+                           <styleClass>
+                              <String fx:value="fn-16" />
+                              <String fx:value="back-green" />
+                              <String fx:value="flat" />
+                           </styleClass>
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Button>
                      </children>
-                     <padding>
-                        <Insets bottom="10.0" />
-                     </padding>
+                     <VBox.margin>
+                        <Insets bottom="5.0" />
+                     </VBox.margin>
                   </HBox>
                   <HBox alignment="CENTER">
                      <children>

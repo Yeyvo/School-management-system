@@ -176,7 +176,21 @@
             </VBox>
             <HBox alignment="CENTER">
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Date du Décès" wrappingWidth="115.0">
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Date du Décès du Père" wrappingWidth="145.0">
+                     <HBox.margin>
+                        <Insets left="7.0" top="5.0" />
+                     </HBox.margin>
+                  </Text>
+                  <DatePicker fx:id="dateDecesPere" prefHeight="25.0" prefWidth="147.0">
+                     <HBox.margin>
+                        <Insets left="5.0" top="5.0" />
+                     </HBox.margin>
+                  </DatePicker>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER">
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fn-14" text="Date du Décès de la Mère" wrappingWidth="160.0">
                      <HBox.margin>
                         <Insets left="7.0" top="5.0" />
                      </HBox.margin>

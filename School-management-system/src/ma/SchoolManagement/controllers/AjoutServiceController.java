@@ -9,10 +9,15 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Alert.AlertType;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
@@ -77,6 +82,32 @@ public class AjoutServiceController implements Initializable {
 
 			Stage stage = (Stage) couvMed.getScene().getWindow();
 			stage.close();
+		}
+	}
+	
+	@FXML
+	void addelv(ActionEvent event) {
+		Stage stage = new Stage();
+		try {
+//			Parent home = FXMLLoader
+//					.load(new DynamicViews().getClass().getResource("/ma/SchoolManagement/view/fxml/ajout_eleve.fxml"));
+			FXMLLoader loader = new FXMLLoader();
+			loader.setLocation(getClass().getResource("/ma/SchoolManagement/view/fxml/ajout_eleve.fxml"));
+			Parent home = loader.load();
+			stage.setScene(new Scene(home));
+			stage.setTitle("Gestion des Eleves  - [ Hamza CHAFKAN  |  AHMED ALI ATTAOUI ] -");
+			stage.getIcons().add(new Image("/ma/SchoolManagement/view/icons/icon.png"));
+			stage.setResizable(false);
+			stage.show();
+			stage.setOnHiding(e -> {
+				idEtudiant.getItems().clear();
+				ObservableList<Etudiant> etuds = FXCollections
+						.observableArrayList(DAOFactory.getSQLDAOFactory().getEtudiantDAO().all());
+				idEtudiant.getItems().setAll(etuds);
+			});
+			((AjoutEleveController) loader.getController()).setSearch(false);
+		} catch (IOException e) {
+			e.printStackTrace();
 		}
 	}
 

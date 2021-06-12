@@ -85,6 +85,25 @@ public class ModifServicesController implements Initializable {
 		this.srv = srv;
 		Etudiant etud = DAOFactory.getSQLDAOFactory().getEtudiantDAO().findid(String.valueOf(srv.getEtudId()));
 		fullname.setText(etud.getEtudNom() + " " + etud.getEtudPrenom());
+		
+		if(srv.isEtudBO()) {
+			ouiBourse.selectedProperty().set(true);
+		} else {
+			nonBourse.selectedProperty().set(true);
+		}
+		if(srv.isEtudCU()) {
+			ouiCiteUniv.selectedProperty().set(true);
+		} else {
+			nonCiteUniv.selectedProperty().set(true);
+		}
+		if(srv.isEtudCMB()) {
+			ouiCouvMed.selectedProperty().set(true);
+			couvMed.setText(srv.getEtudCMBO());
+		} else {
+			nonCouvMed.selectedProperty().set(true);
+		}
+		
+		
 	}
 
 }

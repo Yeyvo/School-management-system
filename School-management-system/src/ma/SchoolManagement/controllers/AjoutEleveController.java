@@ -109,6 +109,8 @@ public class AjoutEleveController implements Initializable {
 			prenomP, CNIM, nomM, prenomM;
 	LocalDate etudNai, ddnPereLocal, dddPereLocal, ddnMereLocal, dddMereLocal;
 
+	boolean search = true;
+
 	@FXML
 	private void add_eleve() throws IOException {
 
@@ -162,7 +164,8 @@ public class AjoutEleveController implements Initializable {
 					Alert alert = new Alert(AlertType.WARNING, "Ajout impossible");
 					alert.show();
 				} else {
-					((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
+					if (search)
+						((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).search();
 				}
 
 				Stage stage = (Stage) CNEEleve.getScene().getWindow();
@@ -179,5 +182,14 @@ public class AjoutEleveController implements Initializable {
 		situationFamilialeEleve.getItems().addAll("Célibataire", "Marié(e)", "Divorcé(e)", "Autre");
 
 	}
+	
+	public boolean isSearch() {
+		return search;
+	}
+
+	public void setSearch(boolean search) {
+		this.search = search;
+	}
+	
 
 }

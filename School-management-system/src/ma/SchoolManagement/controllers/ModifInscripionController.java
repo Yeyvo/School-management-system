@@ -61,6 +61,7 @@ public class ModifInscripionController implements Initializable {
 		this.insc = insc;
 		Etudiant etud = DAOFactory.getSQLDAOFactory().getEtudiantDAO().findid(String.valueOf(insc.getEtudId()));
 		fullname.setText(etud.getEtudNom() + " " + etud.getEtudPrenom());
+		EtudInsc.getSelectionModel().select(insc.getEtudInsc());
 	}
 
 }

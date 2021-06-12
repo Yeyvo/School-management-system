@@ -61,6 +61,9 @@ public class ModifEtablissementController implements Initializable {
 	public void setEtablissement(Etablissement etab) {
 		this.etab = etab;
 		fullname.setText(etab.toString());
+		destxt.setText(etab.getDesEtab());
+		dpmtxt.setText(etab.getEtudDPM());
+		
 	}
 
 }
