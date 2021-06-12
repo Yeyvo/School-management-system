@@ -14,6 +14,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -36,10 +37,17 @@ public class ControllerEleve implements Initializable {
 	@FXML
 	private ScrollPane scrollpane;
 
+	@FXML
+	private RadioButton tout;
+	@FXML
+	private RadioButton male;
+	@FXML
+	private RadioButton female;
+
 	Set<Etudiant> etudiants = new HashSet<>();
-	
+
 	private Etudiant Bigetud;
-	
+
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 		etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().all();
@@ -69,22 +77,47 @@ public class ControllerEleve implements Initializable {
 		stage.setResizable(false);
 		stage.show();
 	}
+	
+	@FXML
+	void sc() {
+		search();
+	}
 
 	@FXML
 	void search() {
-		
-		if(etudiants != null) {
+
+		if (etudiants != null) {
 			Iterator<Etudiant> iter = etudiants.iterator();
-			if(iter.hasNext())
+			if (iter.hasNext())
 				setBig(iter.next());
 		}
-		
+
 		vbscroll.getChildren().clear();
-		
-		if (searchbar.getText() != null && !searchbar.getText().equals("")) {
-			etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().find(searchbar.getText());
-		} else if (searchbar.getText().equals("")) {
-			etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().all();
+
+		if (tout.isSelected()) {
+
+			if (searchbar.getText() != null && !searchbar.getText().equals("")) {
+				etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().find(searchbar.getText());
+			} else if (searchbar.getText().equals("")) {
+				etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().all();
+			}
+
+		} else if (male.isSelected()) {
+
+			if (searchbar.getText() != null && !searchbar.getText().equals("")) {
+				etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().find(searchbar.getText(),"male");
+			} else if (searchbar.getText().equals("")) {
+				etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().all("male");
+			}
+			
+		} else {
+
+			if (searchbar.getText() != null && !searchbar.getText().equals("")) {
+				etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().find(searchbar.getText(),"female");
+			} else if (searchbar.getText().equals("")) {
+				etudiants = DAOFactory.getSQLDAOFactory().getEtudiantDAO().all("female");
+			}
+			
 		}
 
 		for (Etudiant etud : etudiants) {
@@ -96,7 +129,7 @@ public class ControllerEleve implements Initializable {
 				HBox mini = loader.load();
 				((MiniCardStudentController) loader.getController()).setElv(etud);
 				HBox.setMargin(mini, new Insets(0, 0, 5, 0));
-				
+
 				vbscroll.setAlignment(Pos.CENTER);
 				vbscroll.getChildren().add(mini);
 			} catch (IOException e) {
@@ -106,7 +139,6 @@ public class ControllerEleve implements Initializable {
 		}
 
 	}
-	
 
 	public void setBig(Etudiant elv) {
 		try {
@@ -122,7 +154,7 @@ public class ControllerEleve implements Initializable {
 			e.printStackTrace();
 		}
 	}
-	
+
 	public void removeBig() {
 		vboxBig.getChildren().clear();
 	}
@@ -135,6 +167,4 @@ public class ControllerEleve implements Initializable {
 		Bigetud = bigetud;
 	}
 
-	
-	
 }

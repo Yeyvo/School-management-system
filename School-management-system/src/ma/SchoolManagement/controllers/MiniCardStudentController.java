@@ -9,6 +9,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
 import javafx.scene.image.Image;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
@@ -19,7 +20,7 @@ import ma.SchoolManagement.view.SceneNames;
 import ma.SchoolManagement.view.helpers.DynamicViews;
 
 public class MiniCardStudentController implements Initializable {
-	
+
 	@FXML
 	private Text nom;
 	@FXML
@@ -27,16 +28,15 @@ public class MiniCardStudentController implements Initializable {
 	@FXML
 	private Text email;
 	
-	
 	private Etudiant elv;
 
 	@Override
 	public void initialize(URL arg0, ResourceBundle arg1) {
 
 	}
-	
+
 	@FXML
-	private void show_edit(){
+	private void show_edit() {
 
 		try {
 			FXMLLoader loader = new FXMLLoader();
@@ -54,19 +54,18 @@ public class MiniCardStudentController implements Initializable {
 			e.printStackTrace();
 		}
 	}
-	
+
 	@FXML
-	private void detail(){
-		((ControllerEleve)Main.getScenesloaders().get(SceneNames.STUDENT).getController()).setBig(elv);
+	private void detail() {
+		((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController()).setBig(elv);
 	}
 
-	
 	@FXML
 	private void delete() {
 		DAOFactory.getSQLDAOFactory().getEtudiantDAO().delete(elv);
-		ControllerEleve cont  = ((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController());
+		ControllerEleve cont = ((ControllerEleve) Main.getScenesloaders().get(SceneNames.STUDENT).getController());
 		cont.search();
-		if(cont.getBigetud().getEtudId() == elv.getEtudId()) {
+		if (cont.getBigetud().getEtudId() == elv.getEtudId()) {
 			cont.removeBig();
 		}
 	}

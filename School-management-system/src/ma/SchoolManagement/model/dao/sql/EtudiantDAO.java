@@ -200,4 +200,68 @@ public class EtudiantDAO extends DAO<Etudiant> {
 		return etudiant;
 	}
 
+	public Set<Etudiant> find(String nom, String sexe) {
+		Set<Etudiant> set_Etudiant = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			System.out.println("SELECT * FROM Etudiant where EtudNom = '" + nom + "' or  EtudPrenom = '" + nom + "' and lOWER(EtudSexe)='"+sexe+"'");
+			ResultSet result = stmt.executeQuery(
+					"SELECT * FROM Etudiant where EtudNom = '" + nom + "' or  EtudPrenom = '" + nom + "' and lOWER(EtudSexe)='"+sexe+"'");
+			while (result.next()) {
+				set_Etudiant.add(new Etudiant(result.getInt(1), result.getString(2), result.getString(3),
+						result.getString(4), result.getString(5), result.getString(6), result.getDate(7).toLocalDate(),
+						result.getString(8), result.getString(9), result.getInt(10), result.getString(11),
+						result.getString(12), result.getString(13), result.getString(14), result.getString(15),
+						result.getString(16), result.getString(17), result.getString(18),
+						result.getDate(19).toLocalDate(),
+						result.getDate(20) == null ? null : result.getDate(20).toLocalDate(), result.getString(21),
+						result.getString(22), result.getString(23), result.getDate(24).toLocalDate(),
+						result.getDate(25) == null ? null : result.getDate(25).toLocalDate()));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return set_Etudiant;
+	}
+
+	public Set<Etudiant> all(String sexe) {
+		Set<Etudiant> set_Etudiant = new HashSet<>();
+		Statement stmt = null;
+		try {
+			stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+			ResultSet result = stmt.executeQuery("SELECT * FROM Etudiant where lOWER(EtudSexe)='"+sexe+"'");
+			while (result.next()) {
+				set_Etudiant.add(new Etudiant(result.getInt(1), result.getString(2), result.getString(3),
+						result.getString(4), result.getString(5), result.getString(6), result.getDate(7).toLocalDate(),
+						result.getString(8), result.getString(9), result.getInt(10), result.getString(11),
+						result.getString(12), result.getString(13), result.getString(14), result.getString(15),
+						result.getString(16), result.getString(17), result.getString(18),
+						result.getDate(19).toLocalDate(),
+						result.getDate(20) == null ? null : result.getDate(20).toLocalDate(), result.getString(21),
+						result.getString(22), result.getString(23), result.getDate(24).toLocalDate(),
+						result.getDate(25) == null ? null : result.getDate(25).toLocalDate()));
+			}
+			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return set_Etudiant;
+	}
+
 }
