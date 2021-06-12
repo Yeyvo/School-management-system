@@ -26,7 +26,7 @@
          <children>
             <HBox>
                <VBox.margin>
-                  <Insets left="7.0" top="20.0" />
+                  <Insets left="7.0" top="15.0" />
                </VBox.margin>
                <children>
                   <Text fx:id="nom" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" />
@@ -39,6 +39,14 @@
                <children>
                   <Text fx:id="prenom" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" />
                </children>
+            </HBox>
+            <HBox>
+               <children>
+                  <Text fx:id="email" strokeType="OUTSIDE" strokeWidth="0.0" text="________________" />
+               </children>
+               <VBox.margin>
+                  <Insets left="7.0" top="7.0" />
+               </VBox.margin>
             </HBox>
          </children>
       </VBox>

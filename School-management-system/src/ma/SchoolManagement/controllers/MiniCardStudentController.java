@@ -24,6 +24,8 @@ public class MiniCardStudentController implements Initializable {
 	private Text nom;
 	@FXML
 	private Text prenom;
+	@FXML
+	private Text email;
 	
 	
 	private Etudiant elv;
@@ -76,6 +78,7 @@ public class MiniCardStudentController implements Initializable {
 	public void setElv(Etudiant elv) {
 		this.elv = elv;
 		nom.setText(elv.getEtudNom());
+		email.setText(elv.getEtudMail());
 		prenom.setText(elv.getEtudPrenom());
 	}
 
