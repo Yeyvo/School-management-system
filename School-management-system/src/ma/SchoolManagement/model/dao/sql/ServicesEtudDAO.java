@@ -39,6 +39,51 @@ public class ServicesEtudDAO extends DAO<ServicesEtud> {
 
 		return set_ServicesEtud;
 	}
+	
+	public Set<ServicesEtud> all(String test) {
+		Set<ServicesEtud> set_ServicesEtud = new HashSet<>();
+		Statement stmt = null;
+		try {
+			if (test.equals("bourse")) {
+				stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+				ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud where EtudBo = "+1);
+				while (result.next()) {
+					set_ServicesEtud.add(new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3),
+							result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+				}
+				result.close();
+			}
+			else if(test.equals("cu")) {
+				stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+				ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud where EtudCU = "+1);
+				while (result.next()) {
+					set_ServicesEtud.add(new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3),
+							result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+				}
+				result.close();
+			}
+			else if(test.equals("couvMed")) {
+				stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+				ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud where EtudCMB = "+1);
+				while (result.next()) {
+					set_ServicesEtud.add(new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3),
+							result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+				}
+				result.close();
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return set_ServicesEtud;
+	}
 
 	@Override
 	public boolean create(ServicesEtud obj) {
@@ -105,6 +150,51 @@ public class ServicesEtudDAO extends DAO<ServicesEtud> {
 						result.getBoolean(4), result.getBoolean(5), result.getString(6)));
 			}
 			result.close();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			try {
+				stmt.close();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+
+		return setdata;
+	}
+	
+	public Set<ServicesEtud> find(String id, String test) {
+		Set<ServicesEtud> setdata = new HashSet<>();
+		Statement stmt = null;
+		try {
+			if (test.equals("bourse")){
+				stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+				ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud where EtudId = " + id + " and EtudBO = " + 1);
+				while (result.next()) {
+					setdata.add(new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3),
+							result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+				}
+				result.close();
+			}
+			else if (test.equals("cu")){
+				stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+				ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud where EtudId = " + id + " and EtudCU = " + 1);
+				while (result.next()) {
+					setdata.add(new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3),
+							result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+				}
+				result.close();
+			}
+			else if (test.equals("couvMed")){
+				stmt = this.connect.createStatement(ResultSet.TYPE_FORWARD_ONLY, ResultSet.CONCUR_READ_ONLY);
+				ResultSet result = stmt.executeQuery("SELECT * FROM ServicesEtud where EtudId = " + id + " and EtudCMB = " + 1);
+				while (result.next()) {
+					setdata.add(new ServicesEtud(result.getInt(1), result.getString(2), result.getBoolean(3),
+							result.getBoolean(4), result.getBoolean(5), result.getString(6)));
+				}
+				result.close();
+			}
+			
 		} catch (SQLException e) {
 			e.printStackTrace();
 		} finally {

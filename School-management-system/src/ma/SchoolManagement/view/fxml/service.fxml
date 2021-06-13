@@ -4,8 +4,10 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.HBox?>
@@ -58,6 +60,25 @@
                   </HBox>
                   <HBox alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="300.0">
                      <children>
+                        <VBox alignment="CENTER" prefHeight="70.0" prefWidth="158.0">
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <RadioButton fx:id="tout" mnemonicParsing="false" onAction="#sc" prefHeight="18.0" prefWidth="94.0" selected="true" text="Tout">
+                                       <toggleGroup>
+                                          <ToggleGroup fx:id="filtre" />
+                                       </toggleGroup></RadioButton>
+                                    <RadioButton fx:id="bourse" mnemonicParsing="false" onAction="#sc" prefWidth="100.0" text="Bourse" toggleGroup="$filtre" />
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <RadioButton fx:id="cu" mnemonicParsing="false" onAction="#sc" prefHeight="18.0" prefWidth="74.0" text="Cité Univ" toggleGroup="$filtre" />
+                                    <RadioButton fx:id="couvMed" mnemonicParsing="false" onAction="#sc" text="Couv Med" toggleGroup="$filtre" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </VBox>
                         <Button fx:id="addBtn" mnemonicParsing="false" onMouseClicked="#show_add" prefHeight="44.0" prefWidth="165.0" text="Ajouter">
                            <styleClass>
                               <String fx:value="fn-24" />

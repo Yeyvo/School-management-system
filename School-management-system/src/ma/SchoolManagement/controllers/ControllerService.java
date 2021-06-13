@@ -14,6 +14,7 @@ import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.RadioButton;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -71,10 +72,23 @@ public class ControllerService implements Initializable {
 		stage.setResizable(false);
 		stage.show();
 	}
+	@FXML
+	RadioButton tout;
+	@FXML
+	RadioButton bourse;
+	@FXML
+	RadioButton cu;
+	@FXML
+	RadioButton couvMed;
+	
+	@FXML
+	void sc() {
+		search();
+	}
 
 	@FXML
 	void search() {
-		
+		String tmp;
 		if(services != null) {
 			Iterator<ServicesEtud> iter = services.iterator();
 			if(iter.hasNext())
@@ -82,12 +96,39 @@ public class ControllerService implements Initializable {
 		}
 		
 		vbscroll.getChildren().clear();
-		
-		if (searchbar.getText() != null && !searchbar.getText().equals("")) {
-			services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().find(searchbar.getText());
-		} else if (searchbar.getText().equals("")) {
-			services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().all();
+		if (tout.isSelected())
+		{
+			if (searchbar.getText() != null && !searchbar.getText().equals("")) {
+				services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().find(searchbar.getText());
+			} else if (searchbar.getText().equals("")) {
+				services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().all();
+			}
 		}
+		else if (bourse.isSelected()) {
+			tmp="bourse";
+			if (searchbar.getText() != null && !searchbar.getText().equals("")) {
+				services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().find(searchbar.getText(),tmp);
+			} else if (searchbar.getText().equals("")) {
+				services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().all(tmp);
+			}
+		}
+		else if (cu.isSelected()) {
+			tmp="cu";
+			if (searchbar.getText() != null && !searchbar.getText().equals("")) {
+				services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().find(searchbar.getText(),tmp);
+			} else if (searchbar.getText().equals("")) {
+				services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().all(tmp);
+			}
+		}
+		else if (couvMed.isSelected()) {
+			tmp="couvMed";
+			if (searchbar.getText() != null && !searchbar.getText().equals("")) {
+				services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().find(searchbar.getText(),tmp);
+			} else if (searchbar.getText().equals("")) {
+				services = DAOFactory.getSQLDAOFactory().getServicesEtudDAO().all(tmp);
+			}
+		}
+		
 
 		for (ServicesEtud etud : services) {
 
